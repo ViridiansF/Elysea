@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< Updated upstream
 guid: af9ffb5f5da1212418756fade5b0e135
+=======
+guid: 45845a1afa2cfa99581f97c3207e25f6
+>>>>>>> Stashed changes
+=======
+guid: af9ffb5f5da1212418756fade5b0e135
+>>>>>>> origin/Romain
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
