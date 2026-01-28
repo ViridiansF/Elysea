@@ -328,6 +328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ancrage: {fileID: 8585870595464481489}
-  bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
+  bulletPrefab: {fileID: 47165966874807397, guid: 296b7d0b0667e165eaab370f9793983d, type: 3}
   firingPoint: {fileID: 4941595011477916991}
   fireRate: 1
