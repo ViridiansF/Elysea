@@ -3,7 +3,7 @@ using UnityEngine;
 public class shootPlayer : MonoBehaviour
 {
     private Vector2 mousePos;
-
+    public GameObject ancrage;
 
     [SerializeField] public GameObject bulletPrefab;
     [SerializeField] public Transform firingPoint;
@@ -41,7 +41,7 @@ public class shootPlayer : MonoBehaviour
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg - 90f;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        ancrage.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void shoot()
