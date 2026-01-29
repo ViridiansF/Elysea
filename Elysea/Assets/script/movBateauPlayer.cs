@@ -4,19 +4,16 @@ public class movBateauPlayer : MonoBehaviour
 {
     public float turnSpeed = 220f;        // deg/sec
     public float thrust = 12f;            // force moteur
-    public float maxSpeed = 6f;
-    public float waterDrag = 1.6f;// vitesse d’alignement visuel      // vitesse max
-    public float minAlignmentToMove = 0.35f;
-
+    public float maxSpeed = 6f;            // vitesse max
+    public float waterDrag = 1.6f;          // force de freinage de l'eau
+    public float minAlignmentToMove = 0.35f;    // alignement minimum pour que le bateau puisse avancer
     public Rigidbody2D rb;
     private float moveX;
     private float moveY;
 
-    public Vector2 windSum;
+    private Vector2 windSum;
     public void AddWind(Vector2 windForce) => windSum += windForce;
     public void RemoveWind(Vector2 windForce) => windSum -= windForce;
-
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,7 +36,7 @@ public class movBateauPlayer : MonoBehaviour
     {
         Vector2 inputDir = new Vector2(moveX, moveY);
 
-        // 🔄 Moteur/rotation seulement si input
+        // Moteur/rotation seulement si input
         if (inputDir.sqrMagnitude >= 0.01f)
         {
             if (inputDir.sqrMagnitude > 1f) inputDir.Normalize();
@@ -58,15 +55,21 @@ public class movBateauPlayer : MonoBehaviour
             }
         }
 
-        // 🌬️ Vent : TOUJOURS appliqué, même sans input
+        // Limite vitesse
+        float windBonus = windSum.magnitude;
+        float max = maxSpeed + windBonus;
+
+        if (rb.linearVelocity.magnitude > max)
+            rb.linearVelocity = rb.linearVelocity.normalized * max;
+
+        // Freinage eau
+        rb.AddForce(-rb.linearVelocity * waterDrag, ForceMode2D.Force);
+
+        // Vent : TOUJOURS appliqué, même sans input
         rb.AddForce(windSum, ForceMode2D.Force);
 
-        // ⛔ Limite vitesse (moteur + vent)
-        if (rb.linearVelocity.magnitude > maxSpeed)
-            rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
+        
 
-        // 🌊 Freinage eau (ralentit aussi l’effet du vent)
-        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, waterDrag * Time.fixedDeltaTime);
     }
 
 }

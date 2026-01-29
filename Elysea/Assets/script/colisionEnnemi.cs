@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class colisionEnnemi : MonoBehaviour
 {
+    public int damage = 1;
+
+    public int pv = 3;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-
     void Start()
     {
 
@@ -35,7 +37,14 @@ public class colisionEnnemi : MonoBehaviour
 
         if (other.CompareTag("Bullet"))
         {
-            Destroy(transform.root.gameObject); // détruit tout l'ennemi
+            pv -= damage;
+            Debug.Log("PV ennemi : " + pv);
+            if (pv <= 0)
+            {
+                Debug.Log("Ennemi détruit");
+                Destroy(transform.root.gameObject); // détruit tout l'ennemi
+            }
+            
         }
     }
 }

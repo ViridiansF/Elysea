@@ -4,10 +4,8 @@ public class ParticulesVent : MonoBehaviour
 {
     public Vent vent;                 // ton script Vent (windDirection, windStrength)
     public ParticleSystem ps;
-
     public float particleSpeedFactor = 0.6f; // vitesse particules = windStrength * factor
     public float smooth = 8f;                // lissage (optionnel)
-
     private Vector2 currentVel;              // pour lisser
 
     void Awake()
