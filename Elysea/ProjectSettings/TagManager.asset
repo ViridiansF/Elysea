@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ennemi
   - Bullet
+  - Meteo
   layers:
   - Default
   - TransparentFX
