@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Vent : MonoBehaviour
+public class Wind : MonoBehaviour
 {
 
     public Vector2 windDirection = Vector2.right;

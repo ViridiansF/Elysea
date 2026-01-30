@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ColisionPlayer : MonoBehaviour
+public class CollisionPlayer : MonoBehaviour
 {
-    public int PV = 5;
+    public int pv = 5;
     private movBateauPlayer boat; // remplace par le nom de TON script parent
 
     void Awake()
@@ -12,8 +12,7 @@ public class ColisionPlayer : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("ColisionPlayer actif sur : " + gameObject.name);
-        Debug.Log("Parent movBateauPlayer trouvé ? " + (boat != null));
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -21,24 +20,21 @@ public class ColisionPlayer : MonoBehaviour
         Debug.Log("Collision détectée par : " + gameObject.name);
         Debug.Log("Objet touché : " + collision.gameObject.name);
 
-        if (collision.gameObject.CompareTag("Ennemi"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             // Gérer la collision avec l'ennemi
-            var enemy = collision.collider.GetComponent<colisionEnnemi>();
+            var enemy = collision.collider.GetComponent<collisionEnnemi>();
 
             if (enemy == null)
             {
-                Debug.Log("Touched object: " + collision.collider.name);
-                Debug.Log("Touched has parent? " + (collision.collider.transform.parent != null));
-                Debug.Log("Touched path root: " + collision.collider.transform.root.name);
-
+                Debug.Log("Touched enemy as no collision : " + collision.collider.name);
                 return;
             }
             else
             {
-                Debug.Log("Dégâts reçus de l'ennemi : " + enemy.damage);
-                PV -= enemy.damage;
-                if (PV <= 0)
+                Debug.Log("Dégâts reçus de l'ennemi : " + enemy.damageContact);
+                pv -= enemy.damageContact;
+                if (pv <= 0)
                 {
                     Debug.Log("Joueur détruit");
                     Destroy(transform.root.gameObject); // détruit tout le joueur
@@ -54,16 +50,16 @@ public class ColisionPlayer : MonoBehaviour
         Debug.Log("Trigger détecté par : " + gameObject.name);
         Debug.Log("Objet touché : " + other.gameObject.name + " tag=" + other.tag);
 
-        Vent wind = other.GetComponent<Vent>();
+        Wind wind = other.GetComponent<Wind>();
         if (wind != null)
             boat.AddWind(wind.WindForce);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Vent wind = other.GetComponent<Vent>();
+        Wind wind = other.GetComponent<Wind>();
         if (wind != null)
-            boat.RemoveWind(wind.WindForce);
+            boat.RemoveWind();
     }
 }
 

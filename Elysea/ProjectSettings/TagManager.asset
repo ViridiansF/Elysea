@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Ennemi
+  - Enemy
   - Bullet
-  - Meteo
+  - Weather
   layers:
   - Default
   - TransparentFX

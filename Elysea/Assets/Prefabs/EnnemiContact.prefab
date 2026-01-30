@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5154414135476378584}
   m_Layer: 0
   m_Name: EnnemiContact
-  m_TagString: Ennemi
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,6 +76,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 2
   rotationSpeed: 0.0025
+  knockbackDuration: 0.15
 --- !u!1 &6685260474246484062
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,3 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9076cd35fb0aaf449dcf8b2efb5cad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageContact: 3
+  pv: 3
+  enableContactDeath: 1
+  enableKnockbackContact: 1
+  enableKnockbackBullet: 1

@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff77ca2208095247a62156db6eb83af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PV: 5
 --- !u!1 &3921640422843885609
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ GameObject:
   - component: {fileID: 5560448179480144975}
   - component: {fileID: -7366065232014472904}
   m_Layer: 0
-  m_Name: PlayerBateau
+  m_Name: PlayerBoat
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,8 +227,8 @@ MonoBehaviour:
   maxSpeed: 6
   waterDrag: 1.6
   minAlignmentToMove: 0.35
+  enableWind: 1
   rb: {fileID: 5560448179480144975}
-  windSum: {x: 0, y: 0}
 --- !u!1 &5688295076535208924
 GameObject:
   m_ObjectHideFlags: 0

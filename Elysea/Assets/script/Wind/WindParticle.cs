@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ParticulesVent : MonoBehaviour
+public class WindParticle : MonoBehaviour
 {
-    public Vent vent;                 // ton script Vent (windDirection, windStrength)
+    public Wind wind;                 // ton script Vent (windDirection, windStrength)
     public ParticleSystem ps;
     public float particleSpeedFactor = 0.6f; // vitesse particules = windStrength * factor
     public float smooth = 8f;                // lissage (optionnel)
@@ -11,7 +11,7 @@ public class ParticulesVent : MonoBehaviour
     void Awake()
     {
         if (ps == null) ps = GetComponentInChildren<ParticleSystem>();
-        if (vent == null) vent = GetComponent<Vent>();
+        if (wind == null) wind = GetComponent<Wind>();
 
         // Important : on évite d'additionner des vitesses
         var main = ps.main;
@@ -25,10 +25,10 @@ public class ParticulesVent : MonoBehaviour
 
     void LateUpdate()
     {
-        if (ps == null || vent == null) return;
+        if (ps == null || wind == null) return;
 
-        Vector2 dir = vent.windDirection.normalized;
-        Vector2 targetVel = dir * (vent.windStrength * particleSpeedFactor);
+        Vector2 dir = wind.windDirection.normalized;
+        Vector2 targetVel = dir * (wind.windStrength * particleSpeedFactor);
 
         // lissage pour éviter que ça tremble si tu changes le vent
         currentVel = Vector2.Lerp(currentVel, targetVel, smooth * Time.deltaTime);

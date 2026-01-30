@@ -7,13 +7,15 @@ public class movBateauPlayer : MonoBehaviour
     public float maxSpeed = 6f;            // vitesse max
     public float waterDrag = 1.6f;          // force de freinage de l'eau
     public float minAlignmentToMove = 0.35f;    // alignement minimum pour que le bateau puisse avancer
+    public bool enableWind = true;
     public Rigidbody2D rb;
     private float moveX;
     private float moveY;
 
     private Vector2 windSum;
-    public void AddWind(Vector2 windForce) => windSum += windForce;
-    public void RemoveWind(Vector2 windForce) => windSum -= windForce;
+    private Vector2 windEnableSum;
+    public void AddWind(Vector2 windForce) => windSum = windForce;
+    public void RemoveWind() => windSum = Vector2.zero;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,8 +57,14 @@ public class movBateauPlayer : MonoBehaviour
             }
         }
 
+        // Enable vent
+        if (!enableWind)
+            windEnableSum = Vector2.zero;
+        else
+            windEnableSum = windSum;
+
         // Limite vitesse
-        float windBonus = windSum.magnitude;
+        float windBonus = windEnableSum.magnitude;
         float max = maxSpeed + windBonus;
 
         if (rb.linearVelocity.magnitude > max)
@@ -65,10 +73,8 @@ public class movBateauPlayer : MonoBehaviour
         // Freinage eau
         rb.AddForce(-rb.linearVelocity * waterDrag, ForceMode2D.Force);
 
-        // Vent : TOUJOURS appliqué, même sans input
-        rb.AddForce(windSum, ForceMode2D.Force);
 
-        
+        rb.AddForce(windEnableSum, ForceMode2D.Force);
 
     }
 

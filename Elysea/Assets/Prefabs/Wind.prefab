@@ -102,8 +102,8 @@ GameObject:
   - component: {fileID: 1453051770346891162}
   - component: {fileID: 7889892302624154980}
   m_Layer: 0
-  m_Name: Vent
-  m_TagString: Untagged
+  m_Name: Wind
+  m_TagString: Weather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4998,5 +4998,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vent: {fileID: 1942912367593776346}
   ps: {fileID: 7057132937294963238}
-  particleSpeedFactor: 0.6
+  particleSpeedFactor: 0.05
   smooth: 8

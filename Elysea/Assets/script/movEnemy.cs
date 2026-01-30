@@ -10,6 +10,10 @@ public class movEnnemi : MonoBehaviour
     public float rotationSpeed = 0.0025f;
     private Rigidbody2D rb;
 
+    private float knockbackTimer = 0f;
+    [SerializeField] private float knockbackDuration = 0.15f;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,11 +29,16 @@ public class movEnnemi : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Move towards the target
+        if (knockbackTimer > 0f)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            return; // on ne bouge pas vers la cible pendant le knockback
+        }
+
         Vector2 direction = (target.position - transform.position).normalized;
         rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
-        
     }
+
 
     void RotateTowardsTarget()
     {
@@ -38,4 +47,13 @@ public class movEnnemi : MonoBehaviour
         Quaternion q = Quaternion.Euler(new Vector3(0, 0, targetAngle));
         transform.rotation = Quaternion.Slerp(transform.rotation, q, rotationSpeed);
     }
+
+    public void ApplyKnockback(Vector2 force)
+    {
+        knockbackTimer = knockbackDuration;
+
+        rb.linearVelocity = Vector2.zero; // optionnel mais souvent mieux
+        rb.AddForce(force, ForceMode2D.Impulse);
+    }
+
 }
