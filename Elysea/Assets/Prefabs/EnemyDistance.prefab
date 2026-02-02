@@ -186,7 +186,7 @@ MonoBehaviour:
   damage: 1
   pierce: 0
   knockback: 1
-  bulletPrefab: {fileID: 47165966874807397, guid: b3fc31fdfddc6424c90eab45f6b2b9e6, type: 3}
+  bulletPrefab: {fileID: 47165966874807397, guid: 89947a03d91e619408ecbb5198d1eac2, type: 3}
   firingPoint: {fileID: 6812668024036872380}
   fireRate: 0.5
 --- !u!1 &2964591634220420920
