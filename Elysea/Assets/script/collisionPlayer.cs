@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class CollisionPlayer : MonoBehaviour
 {
-    public int pv = 5;
     private movBateauPlayer boat; // remplace par le nom de TON script parent
+    
+    public PlayerHealth playerHealth;
 
     void Awake()
     {
@@ -33,8 +34,8 @@ public class CollisionPlayer : MonoBehaviour
             else
             {
                 Debug.Log("Dégâts reçus de l'ennemi : " + enemy.damageContact);
-                pv -= enemy.damageContact;
-                if (pv <= 0)
+                playerHealth.currentHealth -= enemy.damageContact;
+                if (playerHealth.currentHealth <= 0)
                 {
                     Debug.Log("Joueur détruit");
                     Destroy(transform.root.gameObject); // détruit tout le joueur
