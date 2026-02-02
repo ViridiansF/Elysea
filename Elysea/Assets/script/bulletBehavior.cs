@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class bulletBehavior : MonoBehaviour
 {
+    public int damage = 1;
+    public int pierce = 1;
+    public bool knockback = true;
+    
     [Range(1, 10)]
     [SerializeField] private float speed = 10f;
 
@@ -21,6 +25,5 @@ public class bulletBehavior : MonoBehaviour
     private void Update()
     {
         rb.linearVelocity = transform.up * speed;
-        
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6416741203529234370}
   - component: {fileID: 5823473351591399869}
   - component: {fileID: 1329444328433069283}
+  - component: {fileID: 125063023987739237}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -134,6 +135,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &125063023987739237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76991510049509778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff77ca2208095247a62156db6eb83af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: 5
 --- !u!1 &3921640422843885609
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,10 +157,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6279951647141093680}
-  - component: {fileID: 3694069263256733004}
   - component: {fileID: 5560448179480144975}
+  - component: {fileID: -7366065232014472904}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerBoat
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,20 +183,6 @@ Transform:
   - {fileID: 3143597896266484746}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3694069263256733004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3921640422843885609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 134c33796ad2e16ccbaaf8fd1f76b45f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  rb: {fileID: 5560448179480144975}
 --- !u!50 &5560448179480144975
 Rigidbody2D:
   serializedVersion: 5
@@ -210,6 +210,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7366065232014472904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3921640422843885609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f29c40678807a458a7be6cabd4c715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 220
+  thrust: 12
+  maxSpeed: 6
+  waterDrag: 1.6
+  minAlignmentToMove: 0.35
+  enableWind: 1
+  rb: {fileID: 5560448179480144975}
 --- !u!1 &5688295076535208924
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3143597896266484746}
   m_Layer: 0
-  m_Name: Ancrage
+  m_Name: Anchoring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63005a9937c95d7982c1513c8d0b2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ancrage: {fileID: 8585870595464481489}
+  anchoring: {fileID: 8585870595464481489}
+  damage: 1
+  pierce: 1
+  knockback: 1
   bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
   firingPoint: {fileID: 4941595011477916991}
   fireRate: 1
