@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Weather
   - Enemy
   - Bullet
-  - Weather
+  - HealthBar
   layers:
   - Default
   - TransparentFX
