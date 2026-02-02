@@ -3,11 +3,8 @@ using UnityEngine;
 public class collisionEnnemi : MonoBehaviour
 {
     public int damageContact = 3;
-
     public int pv = 3;
-
     public bool enableContactDeath = true;
-
     public bool enableKnockbackContact = true;
     public bool enableKnockbackBullet = true;
     private float knockbackForceContact = 5f;
@@ -68,19 +65,14 @@ public class collisionEnnemi : MonoBehaviour
             {
                 // Appliquer un knockback à l'ennemi
                 Rigidbody2D enemyRb = this.transform.root.GetComponent<Rigidbody2D>();
-                if (enemyRb != null)
-                {
-                    Debug.Log("Ennemi knockback appliqué bullet");
+                
 
-                    Vector2 dir = (enemyRb.transform.position - transform.position).normalized;
+                Vector2 dir = (enemyRb.transform.position - transform.position).normalized;
                     Vector2 force = dir * knockbackForceBullet;
 
-                    movEnnemi enemy = enemyRb.GetComponent<movEnnemi>();
-                    if (enemy != null)
-                        enemy.ApplyKnockback(force);
-                    else
-                        enemyRb.AddForce(force, ForceMode2D.Impulse);
-                }
+                movEnemy enemy = enemyRb.GetComponent<movEnemy>();
+                    
+                enemy.ApplyKnockback(force);
 
             }
 
