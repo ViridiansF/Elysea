@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2505580164425991409}
   - component: {fileID: 4311026266788788228}
   m_Layer: 0
-  m_Name: EnemyDistance
+  m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   rotationSpeed: 0.0025
   knockbackDuration: 0.15
   speed: 2
-  enableRetreat: 0
+  enableRetreat: 1
   playerDistanceMin: 8
   retreatDistance: 10
 --- !u!1 &997831329160689898
@@ -186,8 +186,6 @@ MonoBehaviour:
   damage: 1
   pierce: 0
   knockback: 1
-  speedBullet: 20
-  lifeTime: 5
   bulletPrefab: {fileID: 47165966874807397, guid: 89947a03d91e619408ecbb5198d1eac2, type: 3}
   firingPoint: {fileID: 6812668024036872380}
   fireRate: 2
