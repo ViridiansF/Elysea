@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff77ca2208095247a62156db6eb83af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PV: 5
+  pv: 5
 --- !u!1 &3921640422843885609
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3143597896266484746}
   m_Layer: 0
-  m_Name: Ancrage
+  m_Name: Anchoring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63005a9937c95d7982c1513c8d0b2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ancrage: {fileID: 8585870595464481489}
+  anchoring: {fileID: 8585870595464481489}
+  damage: 1
+  pierce: 1
+  knockback: 1
   bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
   firingPoint: {fileID: 4941595011477916991}
   fireRate: 1

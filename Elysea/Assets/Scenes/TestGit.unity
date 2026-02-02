@@ -190,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 5154414135476378584, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 2002931952}
+      objectReference: {fileID: 1706914362}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -347,14 +347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  target: {fileID: 2002931952}
+  target: {fileID: 1706914362}
   cameraSpeed: 1
---- !u!1 &1562125285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8585870595464481489, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-  m_PrefabInstance: {fileID: 1677506411}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1677506411
+--- !u!1001 &658073201
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -364,19 +359,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1323208868565759213, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: damage
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1323208868565759213, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-      propertyPath: fireRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1323208868565759213, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-      propertyPath: anchoring
-      value: 
-      objectReference: {fileID: 1562125285}
     - target: {fileID: 3921640422843885609, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: m_Name
-      value: PlayerBateau
+      value: PlayerBoat
       objectReference: {fileID: 0}
     - target: {fileID: 6279951647141093680, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -418,15 +405,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8585870595464481489, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-      propertyPath: m_Name
-      value: Anchoring
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+--- !u!4 &1706914362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6279951647141093680, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+  m_PrefabInstance: {fileID: 658073201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1792247576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -492,11 +480,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a829a0a063a8a4a4a9bc519b61723bce, type: 3}
---- !u!4 &2002931952 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6279951647141093680, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-  m_PrefabInstance: {fileID: 1677506411}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3661860321460145637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560,7 +543,7 @@ PrefabInstance:
     - target: {fileID: 5154414135476378584, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 2002931952}
+      objectReference: {fileID: 1706914362}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -572,6 +555,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 187633316}
   - {fileID: 1792247576}
-  - {fileID: 1677506411}
   - {fileID: 3661860321460145637}
   - {fileID: 320388394}
+  - {fileID: 658073201}
