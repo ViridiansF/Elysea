@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff77ca2208095247a62156db6eb83af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pv: 5
+  playerHealth: {fileID: 0}
 --- !u!1 &3921640422843885609
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 6279951647141093680}
   - component: {fileID: 5560448179480144975}
   - component: {fileID: -7366065232014472904}
+  - component: {fileID: 7835413329015697705}
   m_Layer: 0
   m_Name: PlayerBoat
   m_TagString: Player
@@ -229,6 +230,20 @@ MonoBehaviour:
   minAlignmentToMove: 0.35
   enableWind: 1
   rb: {fileID: 5560448179480144975}
+--- !u!114 &7835413329015697705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3921640422843885609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abee2613fb767c4f852c5da1172d4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
 --- !u!1 &5688295076535208924
 GameObject:
   m_ObjectHideFlags: 0
