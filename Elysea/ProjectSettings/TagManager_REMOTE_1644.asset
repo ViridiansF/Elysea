@@ -7,12 +7,7 @@ TagManager:
   - Weather
   - Enemy
   - Bullet
-<<<<<<< HEAD
-  - Weather
-  - Bullet Enemy
-=======
   - HealthBar
->>>>>>> master
   layers:
   - Default
   - TransparentFX
