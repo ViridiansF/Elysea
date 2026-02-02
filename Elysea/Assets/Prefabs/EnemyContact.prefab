@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2505580164425991409}
   - component: {fileID: 5154414135476378584}
   m_Layer: 0
-  m_Name: EnnemiContact
+  m_Name: EnemyContact
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337602355183508591}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d788abbf34bf9a4b91dfbfd692b6b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6279951647141093680, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
   speed: 2
   rotationSpeed: 0.0025
   knockbackDuration: 0.15
