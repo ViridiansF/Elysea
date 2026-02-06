@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class shootPlayer : shoot
+public class shootPlayer : shootBullet
 {
     private Vector2 mousePos;
 
@@ -21,7 +21,7 @@ public class shootPlayer : shoot
         HandleGunRotation();
         if(Input.GetMouseButton(0) && fireTimer <= 0f)
         {
-            shootBullet();
+            shoot();
             fireTimer = fireRate;
         }
         else
