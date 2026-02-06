@@ -32,7 +32,6 @@
 
 ## Unity caches
 UnityGenerated/
-*.prefab.meta
 
 ## Rider / JetBrains
 .idea/
