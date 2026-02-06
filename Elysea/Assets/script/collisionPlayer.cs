@@ -46,7 +46,7 @@ public class CollisionPlayer : MonoBehaviour
             else
             {
                 Debug.Log("Dégâts reçus de l'ennemi : " + enemy.damageContact);
-                playerHealth.currentHealth -= enemy.damageContact;
+                playerHealth.takeDamage(enemy.damageContact);
                 if (playerHealth.currentHealth <= 0)
                 {
                     Debug.Log("Joueur détruit");
@@ -74,7 +74,7 @@ public class CollisionPlayer : MonoBehaviour
         if (other.CompareTag("Bullet Enemy"))
         {
             //Debug.Log("Dégâts reçus de l'ennemi : " + other.GetComponent<bulletBehavior>().damage);
-            playerHealth.currentHealth -= other.GetComponent<bulletBehavior>().damage;
+            playerHealth.takeDamage(other.GetComponent<bulletBehavior>().damage);
             if (playerHealth.currentHealth <= 0)
             {
                 //Debug.Log("Joueur détruit");
@@ -96,7 +96,7 @@ public class CollisionPlayer : MonoBehaviour
 
         if(other.CompareTag("Laser Enemy"))
         {
-            playerHealth.currentHealth -= other.GetComponent<bulletBehavior>().damage;
+            playerHealth.takeDamage(other.GetComponent<bulletBehavior>().damage);
             Debug.Log("Dégâts initiaux reçus du laser : " + other.GetComponent<bulletBehavior>().damage);
             continuousDamage = true;
             StartCoroutine(TakeDamageOverTime(other.GetComponent<bulletBehavior>().damage, 1f));
@@ -129,7 +129,7 @@ public class CollisionPlayer : MonoBehaviour
         while (continuousDamage == true)
         {
             yield return new WaitForSeconds(interval);
-            playerHealth.currentHealth -= damagePerTick;
+            playerHealth.takeDamage(damagePerTick);
             Debug.Log("Dégâts continus reçus : " + damagePerTick);
         }
     }

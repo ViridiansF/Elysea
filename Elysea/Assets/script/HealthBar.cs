@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
-    public Image fillImage;
 
-    void Update()
+    public Image healthBarImage;
+
+    internal void UpdateBar(float maxHealth, float currentHealth)
     {
-        fillImage.fillAmount =
-            playerHealth.currentHealth / playerHealth.maxHealth;
+        float fillValue = currentHealth / maxHealth;
+
+        healthBarImage.fillAmount = fillValue;
     }
 }
