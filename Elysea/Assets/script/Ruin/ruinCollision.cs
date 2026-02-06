@@ -9,9 +9,7 @@ public class ruinCollision : MonoBehaviour
 
     private void Start()
     {
-        choicePanel.Button1.onClick.AddListener(Choice1Clicked);
-        choicePanel.Button2.onClick.AddListener(Choice2Clicked);
-        choicePanel.Button3.onClick.AddListener(Choice3Clicked);
+
     }
 
     private void Choice1Clicked()
@@ -21,7 +19,7 @@ public class ruinCollision : MonoBehaviour
 
         player.GetComponentInChildren<shootPlayer>().fireRate = 0.1f;
 
-        Destroy(gameObject);
+        Destroy(transform.root.gameObject);
         Time.timeScale = 1;
     }
 
@@ -32,7 +30,7 @@ public class ruinCollision : MonoBehaviour
 
         player.GetComponentInChildren<shootPlayer>().fireRate = 1.0f;
 
-        Destroy(gameObject);
+        Destroy(transform.root.gameObject);
         Time.timeScale = 1;
     }
 
@@ -43,7 +41,7 @@ public class ruinCollision : MonoBehaviour
 
         player.GetComponentInChildren<shootPlayer>().fireRate = 2.0f;
 
-        Destroy(gameObject);
+        Destroy(transform.root.gameObject);
         Time.timeScale = 1;
     }
 
@@ -51,8 +49,12 @@ public class ruinCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.name);
-        if(other.name == "Body")
+        if(other.CompareTag("Player"))
         {
+            choicePanel.Button1.onClick.AddListener(Choice1Clicked);
+            choicePanel.Button2.onClick.AddListener(Choice2Clicked);
+            choicePanel.Button3.onClick.AddListener(Choice3Clicked);
+
             Debug.Log("ruin collision");
             choicePanel.gameObject.SetActive(true);
             Time.timeScale = 0;

@@ -105,7 +105,7 @@ MonoBehaviour:
   damage: 1
   pierce: 1
   knockback: 1
-  speed: 5
+  speed: 100
   lifeTime: 3
 --- !u!50 &7545413481355756760
 Rigidbody2D:
