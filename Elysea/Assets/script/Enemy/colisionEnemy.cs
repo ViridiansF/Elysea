@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class collisionEnnemi : MonoBehaviour
+public class colisionEnemy : MonoBehaviour
 {
     public int damageContact = 3;
     public int pv = 3;
@@ -9,11 +9,13 @@ public class collisionEnnemi : MonoBehaviour
     public bool enableKnockbackBullet = true;
     private float knockbackForceContact = 5f;
     private float knockbackForceBullet = 5f;
+
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -24,14 +26,13 @@ public class collisionEnnemi : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Trigger détecté par : " + gameObject.name);
-        Debug.Log("Objet touché : " + collision.gameObject.name);
+        
 
         if (collision.gameObject.CompareTag("Player"))
         {
             if (enableContactDeath)
             {
-                Destroy(this.transform.root.gameObject); // détruit tout l'ennemi
+                death();
             }
             else
             {
@@ -49,8 +50,8 @@ public class collisionEnnemi : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger détecté par : " + gameObject.name);
-        Debug.Log("Objet touché : " + other.gameObject.name + " tag=" + other.tag);
+        //Debug.Log("Trigger détecté par : " + gameObject.name);
+        //Debug.Log("Objet touché : " + other.gameObject.name + " tag=" + other.tag);
 
         if (other.CompareTag("Bullet"))
         {
@@ -59,7 +60,7 @@ public class collisionEnnemi : MonoBehaviour
             if (pv <= 0)
             {
                 Debug.Log("Ennemi détruit");
-                Destroy(transform.root.gameObject); // détruit tout l'ennemi
+                death();
             }
             if(other.GetComponent<bulletBehavior>().knockback && enableKnockbackBullet)
             {
@@ -83,4 +84,18 @@ public class collisionEnnemi : MonoBehaviour
             }
         }
     }
+
+    private void death()
+    {
+        if(transform.root.CompareTag("ChildBoss"))
+                {
+                    returnPoolChildBoss poolScript = transform.root.GetComponent<returnPoolChildBoss>();
+                    poolScript.Die();
+                }
+                else
+                {   
+                    Destroy(transform.root.gameObject); // détruit tout l'ennemi
+                }
+    }
+
 }

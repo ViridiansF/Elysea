@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff77ca2208095247a62156db6eb83af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 5857380268572158342}
 --- !u!1 &3921640422843885609
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 6279951647141093680}
   - component: {fileID: 5560448179480144975}
   - component: {fileID: -7366065232014472904}
-  - component: {fileID: 7835413329015697705}
+  - component: {fileID: 5857380268572158342}
   m_Layer: 0
   m_Name: PlayerBoat
   m_TagString: Player
@@ -230,7 +230,7 @@ MonoBehaviour:
   minAlignmentToMove: 0.35
   enableWind: 1
   rb: {fileID: 5560448179480144975}
---- !u!114 &7835413329015697705
+--- !u!114 &5857380268572158342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,8 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abee2613fb767c4f852c5da1172d4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 10
+  currentHealth: 10
 --- !u!1 &5688295076535208924
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchoring: {fileID: 8585870595464481489}
+  bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
+  firingPoint: {fileID: 4941595011477916991}
+  fireRate: 1
   damage: 1
   pierce: 1
   knockback: 1
@@ -428,3 +431,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23d78a5fb5d18db594489fd4d5236f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedBullet: 5
+  lifeTime: 5

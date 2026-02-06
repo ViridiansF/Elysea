@@ -8,7 +8,6 @@
 [Mm]emoryCaptures/
 
 ## Asset meta data should be tracked
-!*.meta
 
 ## But ignore the asset store tools folder
 [Aa]sset[Ss]toreTools/
@@ -33,7 +32,6 @@
 
 ## Unity caches
 UnityGenerated/
-*.prefab.meta
 
 ## Rider / JetBrains
 .idea/

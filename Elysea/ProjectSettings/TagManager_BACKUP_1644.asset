@@ -4,13 +4,15 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Enemy
-  - Bullet Enemy
   - Weather
+  - Enemy
   - Bullet
+<<<<<<< HEAD
+  - Weather
+  - Bullet Enemy
+=======
   - HealthBar
-  - ChildBoss
-  - Laser Enemy
+>>>>>>> master
   layers:
   - Default
   - TransparentFX

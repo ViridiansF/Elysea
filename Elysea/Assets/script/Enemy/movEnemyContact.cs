@@ -7,10 +7,20 @@ public class movEnemyContact : movEnemy
 
     public float speed = 2f;
 
+    public void Init(float newSpeed, Transform newTarget)
+    {
+        speed = newSpeed;
+        target = newTarget;
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (target == null)
+        {
+            SetTarget();
+        }
     }
 
     // Update is called once per frame

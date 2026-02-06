@@ -9,10 +9,10 @@ public class bulletBehavior : MonoBehaviour
     public bool knockback = true;
     
     [Range(1, 10)]
-    [SerializeField] protected float speed = 10f;
+    [SerializeField] public float speed = 10f;
 
     [Range(1, 10)]
-    [SerializeField] protected float lifeTime = 3f;
+    [SerializeField] public float lifeTime = 3f;
 
     protected Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
