@@ -7,7 +7,7 @@ public abstract class shootBullet : shoot
     [SerializeField] public int damage = 1;
     [SerializeField] public int pierce = 1;
     [SerializeField] public bool knockback = true;
-    [Range(0.1f, 10f)]
+    [Range(0.1f, 100f)]
     [SerializeField] public float speedBullet = 5f;
     [Range(0.1f, 10f)]
     [SerializeField] public float lifeTime = 5f;

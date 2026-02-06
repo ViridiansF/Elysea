@@ -8,7 +8,7 @@ public class bulletBehavior : MonoBehaviour
     [SerializeField] public int pierce = 1;
     public bool knockback = true;
     
-    [Range(1, 10)]
+    [Range(1, 100)]
     [SerializeField] public float speed = 10f;
 
     [Range(1, 10)]
