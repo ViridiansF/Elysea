@@ -4,12 +4,14 @@ public abstract class shootBullet : shoot
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public int damage = 1;
-    public int pierce = 1;
-    public bool knockback = true;
-    public float speedBullet = 5f;
-    public float lifeTime = 5f;
-    public float shiftSummoning = 0f;
+    [SerializeField] public int damage = 1;
+    [SerializeField] public int pierce = 1;
+    [SerializeField] public bool knockback = true;
+    [Range(0.1f, 10f)]
+    [SerializeField] public float speedBullet = 5f;
+    [Range(0.1f, 10f)]
+    [SerializeField] public float lifeTime = 5f;
+    [SerializeField] public float shiftSummoning = 0f;
 
     void Start()
     {

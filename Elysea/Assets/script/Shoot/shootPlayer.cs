@@ -18,6 +18,8 @@ public class shootPlayer : shootBullet
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("fireTimer : " + fireTimer+" fireRate : " + fireRate);
         HandleGunRotation();
         if(Input.GetMouseButton(0) && fireTimer <= 0f)
         {

@@ -10,9 +10,4 @@ public class SelectTechnologyPanel : MonoBehaviour
     public Button Button2;
     public Button Button3;
     public TextMeshProUGUI TitleText;
-
-    private void Start()
-    {
-        this.gameObject.SetActive(false);
-    }
 }

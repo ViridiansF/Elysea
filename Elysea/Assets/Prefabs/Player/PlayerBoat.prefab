@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 125063023987739237}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,9 +416,9 @@ MonoBehaviour:
   damage: 1
   pierce: 1
   knockback: 1
-  bulletPrefab: {fileID: 47165966874807397, guid: 9456ae6d4f9b6244191a9c573abfc47e, type: 3}
-  firingPoint: {fileID: 4941595011477916991}
-  fireRate: 1
+  speedBullet: 5
+  lifeTime: 5
+  shiftSummoning: 0
 --- !u!114 &3324093335598043132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,5 +431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23d78a5fb5d18db594489fd4d5236f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBullet: 5
-  lifeTime: 5
+  anchoring: {fileID: 0}
+  damage: 1
+  pierce: 1
+  knockback: 1
+  bulletPrefab: {fileID: 0}
+  firingPoint: {fileID: 0}
+  fireRate: 0.5
