@@ -37,6 +37,9 @@ public class movBateauPlayer : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 inputDir = new Vector2(moveX, moveY);
+        //rb.angularVelocity = 0f; // Annule la rotation due à la physique
+
+        Debug.Log("angulard dir " + rb.angularVelocity + " linear dir " + rb.linearVelocity);
 
         // Moteur/rotation seulement si input
         if (inputDir.sqrMagnitude >= 0.01f)
