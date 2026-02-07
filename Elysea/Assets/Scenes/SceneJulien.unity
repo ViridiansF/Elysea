@@ -279,51 +279,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c9bf53e73d8d4749924ce2524cd1599, type: 3}
---- !u!1 &969647793
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 969647795}
-  - component: {fileID: 969647794}
-  m_Layer: 0
-  m_Name: HealthManagor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &969647794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969647793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0859a69646e8434196bd78dcff93ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBarImage: {fileID: 0}
---- !u!4 &969647795
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969647793}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28030264, y: -3.0528235, z: 4.708652}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1115913857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -914,6 +869,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7120438108404257159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28030264
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.0528235
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.708652
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998287933512645008, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528486413094070795, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
+      propertyPath: m_Name
+      value: HealthManagor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9094ff4735454d7f78be63c7c1a3864a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -922,6 +934,6 @@ SceneRoots:
   - {fileID: 1678948908}
   - {fileID: 764359079}
   - {fileID: 2010218560}
-  - {fileID: 969647795}
+  - {fileID: 7120438108404257159}
   - {fileID: 328412918}
   - {fileID: 1846765448}

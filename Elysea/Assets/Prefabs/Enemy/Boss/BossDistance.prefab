@@ -336,7 +336,7 @@ MonoBehaviour:
   damage: 1
   pierce: 0
   knockback: 1
-  speedBullet: 0
+  speedBullet: 0.1
   lifeTime: 5
   shiftSummoning: 25
   rotationSpeed: 0
