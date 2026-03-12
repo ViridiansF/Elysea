@@ -21,7 +21,6 @@ public class SelectTechnologyPanel : MonoBehaviour
 
     private void Start()
     {
-        this.gameObject.SetActive(false);
 
         // Load technology data from the text file
         foreach(string line in TechFile.text.Split('\n'))
@@ -49,11 +48,13 @@ public class SelectTechnologyPanel : MonoBehaviour
         System.Random rand = new System.Random();
         var randomValues = AllowTechnologies.OrderBy(x => rand.Next()).Take(3).ToList();
 
+        
         Button1.GetComponentInChildren<TextMeshProUGUI>().text = randomValues[0][2];
         Button2.GetComponentInChildren<TextMeshProUGUI>().text = randomValues[1][2];
         Button3.GetComponentInChildren<TextMeshProUGUI>().text = randomValues[2][2];
-
+        
     
     }
+
 }
 

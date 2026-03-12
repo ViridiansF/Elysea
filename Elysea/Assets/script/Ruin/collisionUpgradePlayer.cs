@@ -14,7 +14,7 @@ public class upgradePlayer : MonoBehaviour
     {
           if(other.CompareTag("Player"))
           {
-             Destroy(gameObject);
+            Destroy(gameObject);
           }
     }
 }
