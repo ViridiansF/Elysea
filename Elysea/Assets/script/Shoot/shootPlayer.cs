@@ -19,7 +19,7 @@ public class shootPlayer : shootBullet
     void Update()
     {
 
-        Debug.Log("fireTimer : " + fireTimer+" fireRate : " + fireRate);
+        //Debug.Log("fireTimer : " + fireTimer+" fireRate : " + fireRate);
         HandleGunRotation();
         if(Input.GetMouseButton(0) && fireTimer <= 0f)
         {

@@ -35,7 +35,7 @@ public class CollisionPlayer : MonoBehaviour
 
             if (damageTimer >= 1f)
             {
-                playerHealth.currentHealth -= continuousDamage;
+                playerHealth.takeDamage(continuousDamage);
                 Debug.Log("Dégâts continus reçus : " + continuousDamage);
                 damageTimer = 0f;
             }
@@ -60,7 +60,7 @@ public class CollisionPlayer : MonoBehaviour
             else
             {
                 Debug.Log("Dégâts reçus de l'ennemi : " + enemy.damageContact);
-                playerHealth.currentHealth -= enemy.damageContact;
+                playerHealth.takeDamage(enemy.damageContact);
             }
             
         }
@@ -83,7 +83,7 @@ public class CollisionPlayer : MonoBehaviour
         if (other.CompareTag("Bullet Enemy"))
         {
             //Debug.Log("Dégâts reçus de l'ennemi : " + other.GetComponent<bulletBehavior>().damage);
-            playerHealth.currentHealth -= other.GetComponent<bulletBehavior>().damage;
+            playerHealth.takeDamage(other.GetComponent<bulletBehavior>().damage);
 
             // Knockback 2D
             Rigidbody2D rb = GetComponentInParent<Rigidbody2D>(); // Assure-toi que le joueur a un Rigidbody2D
@@ -100,7 +100,7 @@ public class CollisionPlayer : MonoBehaviour
 
         if(other.CompareTag("Laser Enemy"))
         {
-            playerHealth.currentHealth -= other.GetComponent<bulletBehavior>().damage;
+            playerHealth.takeDamage(other.GetComponent<bulletBehavior>().damage);
             Debug.Log("Dégâts initiaux reçus du laser : " + other.GetComponent<bulletBehavior>().damage);
             continuousDamage = other.GetComponent<bulletBehavior>().damage;
         }
