@@ -161,8 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0859a69646e8434196bd78dcff93ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
-  healthBarUI: {fileID: 664178411969800715, guid: 4d793063c2f49484ca75cffa66d5302d, type: 3}
+  healthBarImage: {fileID: 0}
 --- !u!1 &3921640422843885609
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,22 +432,3 @@ MonoBehaviour:
   speedBullet: 5
   lifeTime: 5
   shiftSummoning: 0
---- !u!114 &3324093335598043132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9101348639977352906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23d78a5fb5d18db594489fd4d5236f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anchoring: {fileID: 0}
-  damage: 1
-  pierce: 1
-  knockback: 1
-  bulletPrefab: {fileID: 0}
-  firingPoint: {fileID: 0}
-  fireRate: 0.5

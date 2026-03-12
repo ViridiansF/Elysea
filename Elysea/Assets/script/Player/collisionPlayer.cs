@@ -9,7 +9,9 @@ public class CollisionPlayer : MonoBehaviour
 
     private float knockbackForce = 2f; 
 
-    private bool continuousDamage = true;
+    private int continuousDamage = 0;
+
+    private float damageTimer = 0f;
 
     void Awake()
     {
@@ -25,6 +27,18 @@ public class CollisionPlayer : MonoBehaviour
     {
         if (playerHealth.currentHealth <= 0){
             Death();
+        }
+
+        if (continuousDamage != 0)
+        {
+            damageTimer += Time.deltaTime;
+
+            if (damageTimer >= 1f)
+            {
+                playerHealth.currentHealth -= continuousDamage;
+                Debug.Log("Dégâts continus reçus : " + continuousDamage);
+                damageTimer = 0f;
+            }
         }
     }
 
@@ -46,12 +60,7 @@ public class CollisionPlayer : MonoBehaviour
             else
             {
                 Debug.Log("Dégâts reçus de l'ennemi : " + enemy.damageContact);
-                playerHealth.takeDamage(enemy.damageContact);
-                if (playerHealth.currentHealth <= 0)
-                {
-                    Debug.Log("Joueur détruit");
-                    Death(); // détruit tout le joueur
-                }
+                playerHealth.currentHealth -= enemy.damageContact;
             }
             
         }
@@ -74,12 +83,7 @@ public class CollisionPlayer : MonoBehaviour
         if (other.CompareTag("Bullet Enemy"))
         {
             //Debug.Log("Dégâts reçus de l'ennemi : " + other.GetComponent<bulletBehavior>().damage);
-            playerHealth.takeDamage(other.GetComponent<bulletBehavior>().damage);
-            if (playerHealth.currentHealth <= 0)
-            {
-                //Debug.Log("Joueur détruit");
-                Death(); // détruit tout le joueur
-            }
+            playerHealth.currentHealth -= other.GetComponent<bulletBehavior>().damage;
 
             // Knockback 2D
             Rigidbody2D rb = GetComponentInParent<Rigidbody2D>(); // Assure-toi que le joueur a un Rigidbody2D
@@ -96,10 +100,9 @@ public class CollisionPlayer : MonoBehaviour
 
         if(other.CompareTag("Laser Enemy"))
         {
-            playerHealth.takeDamage(other.GetComponent<bulletBehavior>().damage);
+            playerHealth.currentHealth -= other.GetComponent<bulletBehavior>().damage;
             Debug.Log("Dégâts initiaux reçus du laser : " + other.GetComponent<bulletBehavior>().damage);
-            continuousDamage = true;
-            StartCoroutine(TakeDamageOverTime(other.GetComponent<bulletBehavior>().damage, 1f));
+            continuousDamage = other.GetComponent<bulletBehavior>().damage;
         }
     }
 
@@ -109,10 +112,9 @@ public class CollisionPlayer : MonoBehaviour
         if (wind != null)
             boat.RemoveWind();
 
-        if (other.CompareTag("Laser Enemy") && continuousDamage == true)
+        if (other.CompareTag("Laser Enemy") && continuousDamage != 0)
         {
-            StopCoroutine(TakeDamageOverTime(0, 0f));
-            continuousDamage = false;
+            continuousDamage = 0;
         }
     }
 
@@ -121,17 +123,6 @@ public class CollisionPlayer : MonoBehaviour
         // Ajouter des effets de mort ici (explosion, son, etc.)
         Time.timeScale = 0f; // Tout s'arrête
         Debug.Log("Game Over");
-    }
-
-    private IEnumerator TakeDamageOverTime(int damagePerTick, float interval)
-    {
-
-        while (continuousDamage == true)
-        {
-            yield return new WaitForSeconds(interval);
-            playerHealth.takeDamage(damagePerTick);
-            Debug.Log("Dégâts continus reçus : " + damagePerTick);
-        }
     }
 }
 
