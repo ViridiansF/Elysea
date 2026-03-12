@@ -18,6 +18,7 @@ public class SelectTechnologyPanel : MonoBehaviour
     private List<string[]> AllowTechnologies = new List<string[]>();
     private List<string[]> CurrentTechnologies = new List<string[]>();  
     private bool isAllowUr = false;
+    private List<string[]> randomValues = new List<string[]>();
 
     private void Start()
     {
@@ -46,15 +47,23 @@ public class SelectTechnologyPanel : MonoBehaviour
         }
 
         System.Random rand = new System.Random();
-        var randomValues = AllowTechnologies.OrderBy(x => rand.Next()).Take(3).ToList();
+        randomValues = AllowTechnologies.OrderBy(x => rand.Next()).Take(3).ToList();
 
         
         Button1.GetComponentInChildren<TextMeshProUGUI>().text = randomValues[0][2];
         Button2.GetComponentInChildren<TextMeshProUGUI>().text = randomValues[1][2];
         Button3.GetComponentInChildren<TextMeshProUGUI>().text = randomValues[2][2];
-        
     
     }
 
+    public void setActualTechnology(String[] tech)
+    {
+        CurrentTechnologies.Add(tech);
+    }
+
+    public List<String[]> getRandomTechnology()
+    {
+        return randomValues;
+    }
 }
 
