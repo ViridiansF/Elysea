@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,14 @@ public class GameManager : MonoBehaviour
     public Transform player;
     public GameObject enemyPrefab;
     public GameObject bossPrefab;
+
+    [Header("UI Settings")]
+    public GameObject endScreenUI;
+
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
 
     void Update()
     {
@@ -35,7 +44,7 @@ public class GameManager : MonoBehaviour
         }
         if(isBossPhase && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            PauseGame();
+            WinGame();
         }
     }
 
@@ -67,11 +76,43 @@ public class GameManager : MonoBehaviour
         
     }
 
+    void WinGame()
+    {
+        // On active l'écran de fin
+        if (endScreenUI != null)
+        {
+            endScreenUI.SetActive(true);
+        }
+
+        PauseGame();
+    }
+
     void PauseGame()
     {
         // Met le jeu en pause
         Time.timeScale = 0f;
         Debug.Log("Aucun ennemi restant ! Jeu en pause.");
+    }
+
+    public void RejouerPartie()
+    {
+        // On remet le temps à la normale
+        Time.timeScale = 1f;
+
+        // On recharge la scène actuelle
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+    }
+
+    public void QuitterJeu()
+    {
+        Application.Quit();
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+
+        Debug.Log("Le jeu a été fermé.");
     }
 
     public int getActualTime()
