@@ -180,6 +180,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae303d32a846ec46b9d2a30a040ea94, type: 3}
+--- !u!1 &95129310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 534519157721881562, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+  m_PrefabInstance: {fileID: 355651202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &133919391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -530,6 +535,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6271771956119545837, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1270042820}
+    - targetCorrespondingSourceObject: {fileID: 6271771956119545837, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1270042823}
   m_SourcePrefab: {fileID: 100100000, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
 --- !u!1 &430212559
 GameObject:
@@ -1017,6 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fef55a05c42ed0359ec387b716f7f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!58 &1270042821
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1053,6 +1062,28 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 10
+--- !u!114 &1270042823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270042818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fa4604258288cb082db348809370c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchoring: {fileID: 95129310}
+  bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
+  firingPoint: {fileID: 2122516993}
+  fireRate: 0.1
+  damage: 1
+  pierce: 1
+  knockback: 1
+  speedBullet: 5
+  lifeTime: 5
+  shiftSummoning: 0
 --- !u!1001 &1272178920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1361,6 +1392,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2122516993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6395928345910999471, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+  m_PrefabInstance: {fileID: 355651202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
