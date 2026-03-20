@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
 
     internal void UpdateBar(float maxHealth, float currentHealth)
     {
+        Debug.Log("1 clicked");
         float fillValue = currentHealth / maxHealth;
 
         healthBarImage.fillAmount = fillValue;
