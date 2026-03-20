@@ -1,6 +1,6 @@
 Id,Catégories,Nom,Santé,CH vision,Déchet nucléaire,Degat,Elec,Vitesse vent,Vitesse,Pollutions,Multiplicité,Conditions apparition,Polluant,Vert,Optionel,,Description,x
 1,Base,Voile,,,,,,20,,,,,,X,,,,x
-2,Base,Baliste,,,,2,,,,,,,,X,,,,x
+2,Base,Baliste,,,,2,,,,,,,,X,Todo,,,x
 3,Energies,Centrale a charbon,,,,,10,,,10,X,,X,,,,,x
 4,Energies,Centrale a pétrole,,,,,10,,,5,X,,X,,,,,x
 5,Energies,Centrale nucléaire,,,10,,15,,,,X,Lab. Nucléaire,,,,,,x
@@ -15,9 +15,9 @@ Id,Catégories,Nom,Santé,CH vision,Déchet nucléaire,Degat,Elec,Vitesse vent,V
 14,Matériaux,Caoutchouc - pétrole,,,,,,,,,,,X,,X,,,x
 15,Matériaux,Acier,100,,,,,,,5,,,X,,,,,x
 16,Matériaux,Bois,,,,,,,,,,,,X,X,,+ 10 pop,x
-17,Matériaux,Aluminium,,,,,,10,,5,,,X,,,,,x
-18,Laboratoire,Lab. Pétrochimique,,,,,,,,,,,,,,,+1 choix polluants (50%),x
-19,Laboratoire,BioLab,,,,,,,,,,,,X,,,+1 choix Tech Verte (50%),x
+17,Matériaux,Aluminium,,,,,,,10,5,,,X,,,,,x
+18,Laboratoire,Lab. Pétrochimique,,,,,,,,,,,,,Todo,,+1 choix polluants (50%),x
+19,Laboratoire,BioLab,,,,,,,,,,,,X,Todo,,+1 choix Tech Verte (50%),x
 20,Laboratoire,Lab. Nucléaire,,,,,,,,,,,,,,,Débloque tech nucléaire,x
 21,Moteur,Moteur a combustion,,,,,,,10,5,X,,X,,,,,x
 22,Moteur,Moteur électrique,,,,,-5,,10,,X,,,X,,,,x
@@ -37,7 +37,7 @@ Id,Catégories,Nom,Santé,CH vision,Déchet nucléaire,Degat,Elec,Vitesse vent,V
 36,Explorations,Sonar,,,,,,,,,,,,X,X,,visibilité ds ls noir,x
 37,Bouclier,Interception (missile),,,,,,,,,X,,,X,Todo,,Nombre d'attaque Cac évité 5,x
 38,Bouclier,Nuage de drone,,,,,,,,,X,,,X,Todo,,Nombre d'attaque Distance évité 5,x
-39,Algorithme,Opti consommation élec,,,,,,,,,,,,X,Todo,,+25% prod élec,x
+39,Algorithme,Opti consommation élec,,,,,-2,,,,,,,X,Todo,,+25% prod élec,x
 40,Algorithme,Opti du rechargement,,,,,-2,,,,X,,,X,Todo,,+25% vitesse de tir,x
 41,Arme,Mickael,,,,1000,,,,,,Lab. Nucléaire,,X,Todo,,aura de Mickael,x
 42,Pollutions,Captation du carbonne,,,,,,,,-5,X,,,X,,,,x
