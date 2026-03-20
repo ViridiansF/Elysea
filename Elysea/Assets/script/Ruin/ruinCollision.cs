@@ -6,7 +6,6 @@ public class ruinCollision : MonoBehaviour
     //[SerializeField] private GameObject choicePanel;
     [SerializeField] private SelectTechnologyPanel choicePanel;
     [SerializeField] private GameObject player;
-    public SelectTechnologyPanel panel;
 
     private void Start()
     {
@@ -15,8 +14,8 @@ public class ruinCollision : MonoBehaviour
 
     private void Choice1Clicked()
     {
-        Debug.Log("1 clicked: " + panel.getRandomTechnology()[0].getName());
-        panel.setActualTechnology(panel.getRandomTechnology()[0]);
+        Debug.Log("1 clicked: " + choicePanel.getRandomTechnology()[0].getName());
+        choicePanel.setActualTechnology(choicePanel.getRandomTechnology()[0]);
         Destroy(transform.root.gameObject);
         choicePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
@@ -24,8 +23,8 @@ public class ruinCollision : MonoBehaviour
 
     private void Choice2Clicked()
     {
-        Debug.Log("2 clicked: " + panel.getRandomTechnology()[1].getName());
-        panel.setActualTechnology(panel.getRandomTechnology()[1]);
+        Debug.Log("2 clicked: " + choicePanel.getRandomTechnology()[1].getName());
+        choicePanel.setActualTechnology(choicePanel.getRandomTechnology()[1]);
         Destroy(transform.root.gameObject);
         choicePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
@@ -33,8 +32,8 @@ public class ruinCollision : MonoBehaviour
 
     private void Choice3Clicked()
     {
-        Debug.Log("3 clicked: " + panel.getRandomTechnology()[2].getName());
-        panel.setActualTechnology(panel.getRandomTechnology()[2]);
+        Debug.Log("3 clicked: " + choicePanel.getRandomTechnology()[2].getName());
+        choicePanel.setActualTechnology(choicePanel.getRandomTechnology()[2]);
         Destroy(transform.root.gameObject);
         choicePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
