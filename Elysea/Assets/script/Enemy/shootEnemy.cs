@@ -1,36 +1,23 @@
 using UnityEngine;
 
-public class shootEnemy : MonoBehaviour
+public class shootEnemy : shootBullet
 {
-    public GameObject anchoring;
-
-    private Transform target;
-
-    public int damage = 1;
-    public int pierce = 1;
-
-    public bool knockback = true;
-
-    [SerializeField] public GameObject bulletPrefab;
-    [SerializeField] public Transform firingPoint;
-    [Range(0.1f, 2f)]
-    [SerializeField] public float fireRate = 0.5f;
-
-    private float fireTimer;
-
-
-
+    [SerializeField] public float rotationSpeed = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        target = GetComponentInParent<movEnemy>().target;
-
+        fireTimer = fireRate;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(target == null)
+        {
+            target = GetComponentInParent<movEnemy>().target;
+            return;
+        }
         HandleGunRotation();
         if(fireTimer <= 0f)
         {
@@ -43,21 +30,18 @@ public class shootEnemy : MonoBehaviour
         }
     }
 
-    private void HandleGunRotation()
+    protected override void HandleGunRotation()
     {
         Vector2 direction = target.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        anchoring.transform.rotation = Quaternion.Euler(0, 0, angle);
-    }
+        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 
-    private void shoot()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+        // Récupère l'angle actuel
+        float currentAngle = anchoring.transform.eulerAngles.z;
 
-        bulletBehavior bulletScript = bullet.GetComponent<bulletBehavior>();
-        bulletScript.damage = damage;
-        bulletScript.pierce = pierce;
-        bulletScript.knockback = knockback;
+        // Interpolation vers l'angle cible avec un facteur de vitesse
+        float newAngle = Mathf.LerpAngle(currentAngle, targetAngle, rotationSpeed * Time.deltaTime);
 
+        // Applique la rotation
+        anchoring.transform.rotation = Quaternion.Euler(0, 0, newAngle);
     }
 }

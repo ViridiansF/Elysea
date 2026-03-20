@@ -13,6 +13,15 @@ public class movEnemyDistance : movEnemy
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (target == null)
+        {
+            Debug.Log("Target is null in movEnemyDistance");
+            SetTarget();
+        }
+        else
+        {
+            Debug.Log("Target already set in movEnemyDistance");
+        }
     }
 
     // Update is called once per frame
