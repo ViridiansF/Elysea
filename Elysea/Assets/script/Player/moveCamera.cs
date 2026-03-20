@@ -10,7 +10,7 @@ public class CameraScript : MonoBehaviour
     [SerializeField] public Transform target;
 
     //The speed of the movement
-    public float cameraSpeed = 1f;
+    public float cameraSpeed = 0.1f;
 
 
     private Vector3 vel = Vector3.zero;
