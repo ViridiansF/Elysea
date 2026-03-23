@@ -38,18 +38,15 @@ public class autoShootPlayer : shootBullet
 
     protected override void HandleGunRotation()
     {
-// 1. Calcul de l'angle cible
-    Vector3 dir = zone.target.position - transform.position;
-    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
-    Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+        Vector3 dir = zone.target.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
 
-    // 2. Rotation à vitesse CONSTANTE (rotationSpeed degrés par seconde)
-    anchoring.transform.rotation = Quaternion.RotateTowards(
-        anchoring.transform.rotation, 
-        targetRotation, 
-        rotationSpeed * Time.deltaTime
-    );
+
+        anchoring.transform.rotation = Quaternion.RotateTowards(
+            anchoring.transform.rotation, 
+            targetRotation, 
+            rotationSpeed * Time.deltaTime
+        );
     }
-
-
 }
