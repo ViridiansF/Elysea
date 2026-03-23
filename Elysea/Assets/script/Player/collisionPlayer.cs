@@ -13,6 +13,8 @@ public class CollisionPlayer : MonoBehaviour
 
     private float damageTimer = 0f;
 
+    public GameManager gameManager;
+
     void Awake()
     {
         boat = GetComponentInParent<movBateauPlayer>(); // ou ton script de mouvement
@@ -120,9 +122,7 @@ public class CollisionPlayer : MonoBehaviour
 
     void Death()
     {
-        // Ajouter des effets de mort ici (explosion, son, etc.)
-        Time.timeScale = 0f; // Tout s'arrête
-        Debug.Log("Game Over");
+        gameManager.GameOver();
     }
 }
 
