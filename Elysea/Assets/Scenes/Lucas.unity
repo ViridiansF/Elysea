@@ -316,9 +316,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5808909228511450126, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7999794986955731884, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
       propertyPath: m_Name
       value: EndScreenPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999794986955731884, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1164,6 +1172,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c52813c890b5e416ba2935eef47bab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1223861192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+  m_PrefabInstance: {fileID: 1703341326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868a96cb6d810e642972c4130a96c00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1271383642 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3199019919172512500, guid: 54d61143c8f03eb49a39f082f14314e7, type: 3}
@@ -1327,6 +1346,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1706914362}
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: waveTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: bossPrefab
       value: 
       objectReference: {fileID: 337602355183508591, guid: 83dc60caf9954c2468ba04e019a5273b, type: 3}
@@ -1338,6 +1361,10 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 337602355183508591, guid: c1c1bf42ab6ae9e4698deae41edaef0a, type: 3}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: explorationTime
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1518,7 +1545,7 @@ PrefabInstance:
     - target: {fileID: 5983906409173922075, guid: 894daad57e707064f90066ab7b80dffa, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1223861192}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
