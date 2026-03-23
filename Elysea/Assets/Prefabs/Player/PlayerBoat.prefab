@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 5560448179480144975}
   - component: {fileID: -7366065232014472904}
   - component: {fileID: 5857380268572158342}
+  - component: {fileID: -4752551693555153741}
   m_Layer: 0
   m_Name: PlayerBoat
   m_TagString: Player
@@ -322,6 +323,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
+--- !u!114 &-4752551693555153741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3921640422843885609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49dca40176d4334eb437d671914ccd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5688295076535208924
 GameObject:
   m_ObjectHideFlags: 0
