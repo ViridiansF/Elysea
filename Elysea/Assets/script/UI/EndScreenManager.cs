@@ -26,4 +26,9 @@ public class EndScreenManager : MonoBehaviour
         #endif
     }
 
+    public void MenuPrincipal()
+    {
+        SceneManager.LoadScene("Menu Principal");
+    }
+
 }

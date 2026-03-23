@@ -7,4 +7,12 @@ public class StartButton : MonoBehaviour
     {
         SceneManager.LoadScene("Tuto");
     }
+
+    public void Quitter()
+    {
+        Application.Quit();
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
 }

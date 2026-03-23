@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  target: {fileID: 1706914362}
+  target: {fileID: 682089312}
   cameraSpeed: 0.3
 --- !u!1001 &470173218
 PrefabInstance:
@@ -769,11 +769,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &525825438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3921640422843885609, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-  m_PrefabInstance: {fileID: 658073201}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &658073201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,6 +785,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 749313692}
+    - target: {fileID: 249022841389815808, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      propertyPath: healthBarImage
+      value: 
+      objectReference: {fileID: 801468684}
     - target: {fileID: 1323208868565759213, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: damage
       value: 1
@@ -858,6 +857,10 @@ PrefabInstance:
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 801468684}
+    - target: {fileID: 6536442406414331254, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 749313692}
     - target: {fileID: 7835413329015697705, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: maxHealth
       value: 10
@@ -930,7 +933,7 @@ PrefabInstance:
     - target: {fileID: 8479908721704511963, guid: ad6f500fdb5a8424fa88be9740278514, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 525825438}
+      objectReference: {fileID: 0}
     - target: {fileID: 8479908721704511963, guid: ad6f500fdb5a8424fa88be9740278514, type: 3}
       propertyPath: techPanel
       value: 
@@ -944,6 +947,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6f500fdb5a8424fa88be9740278514, type: 3}
+--- !u!4 &682089312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 877240219467384355, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+  m_PrefabInstance: {fileID: 658073201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &686883380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1223,7 +1231,7 @@ PrefabInstance:
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1706914362}
+      objectReference: {fileID: 682089312}
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: waveTime
       value: 1
@@ -1240,6 +1248,10 @@ PrefabInstance:
       propertyPath: endScreenUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 337602355183508591, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: enemiesToSpawn
       value: 1
@@ -1371,11 +1383,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d61143c8f03eb49a39f082f14314e7, type: 3}
---- !u!4 &1706914362 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6279951647141093680, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-  m_PrefabInstance: {fileID: 658073201}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1717843427 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6974171924971008839, guid: 815517075c002ed42842a9e327b8a5dd, type: 3}
