@@ -32,9 +32,24 @@ public class SelectTechnologyPanel : MonoBehaviour
 
             if (int.TryParse(data[0], out int result) && data[15] == "")
             {
-                techTemp = new Tech(data[2], data[11], data[12]);
+                // data[2]=Nom, data[3]=Santé, data[4]=CH vision, data[5]=Déchet nucléaire,
+                // data[6]=Dégâts, data[7]=Elec, data[8]=Vitesse vent, data[9]=Vitesse, data[10]=Pollutions,
+                // data[11]=Multiplicité, data[12]=Conditions
+                techTemp = new Tech(
+                    data[2],        // nom
+                    data[11],       // multiplicité
+                    data[12],       // conditions
+                    data[3],        // santé
+                    data[4],        // vision
+                    data[5],        // déchet nucléaire
+                    data[6],        // dégâts
+                    data[7],        // électricité
+                    data[8],        // vitesse vent
+                    data[9],        // vitesse
+                    data[10]        // pollution
+                );
                 AllTechnologies.Add(techTemp);
-                //Debug.Log("Test création " + techTemp.getName() +" "+ techTemp.getDuplicity() +" "+ techTemp.getLockCondition());
+                //Debug.Log("Tech créée: " + techTemp.getName());
             }
         }
     }
