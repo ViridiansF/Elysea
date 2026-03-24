@@ -491,6 +491,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+--- !u!4 &1017119275 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 877240219467384355, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+  m_PrefabInstance: {fileID: 1846765448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1034412082 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4933471019015234432, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
@@ -938,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  target: {fileID: 1846765449}
+  target: {fileID: 0}
   cameraSpeed: 1
 --- !u!224 &1753580684 stripped
 RectTransform:
@@ -978,7 +983,7 @@ MonoBehaviour:
   waveTime: 10
   enemiesToSpawn: 20
   spawnRadius: 10
-  player: {fileID: 1846765449}
+  player: {fileID: 1017119275}
   enemyPrefab: {fileID: 337602355183508591, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
   bossPrefab: {fileID: 337602355183508591, guid: 83dc60caf9954c2468ba04e019a5273b, type: 3}
   endScreen: {fileID: 1034412083}
@@ -1009,6 +1014,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1800939511}
+    - target: {fileID: 249022841389815808, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      propertyPath: healthBarImage
+      value: 
+      objectReference: {fileID: 350671982}
     - target: {fileID: 1323208868565759213, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: damage
       value: 100
@@ -1073,16 +1082,15 @@ PrefabInstance:
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 350671982}
+    - target: {fileID: 6536442406414331254, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1800939511}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
---- !u!4 &1846765449 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6279951647141093680, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
-  m_PrefabInstance: {fileID: 1846765448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2010218557
 GameObject:
   m_ObjectHideFlags: 0
