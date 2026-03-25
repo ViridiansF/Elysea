@@ -643,6 +643,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     - target: {fileID: 6376814912861962003, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: healthBarImage
@@ -651,6 +652,28 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
 =======
+=======
+    - target: {fileID: 7248235457946865801, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1595167722}
+    - target: {fileID: 7248235457946865801, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248235457946865801, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Rejouer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896762812337882115, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1595167722}
+    - target: {fileID: 7896762812337882115, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quitter
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 7999794986955731884, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
       propertyPath: m_Name
       value: EndScreenPanel
@@ -659,11 +682,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     m_RemovedComponents: []
 >>>>>>> origin/master
+=======
+    m_RemovedComponents:
+    - {fileID: 6109242637353484197, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+>>>>>>> Stashed changes
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7999794986955731884, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595167722}
   m_SourcePrefab: {fileID: 100100000, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
 --- !u!1 &430212559
 GameObject:
@@ -951,11 +982,15 @@ MonoBehaviour:
   player: {fileID: 275254773}
   enemyPrefab: {fileID: 337602355183508591, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
   bossPrefab: {fileID: 337602355183508591, guid: 83dc60caf9954c2468ba04e019a5273b, type: 3}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   endScreenUI: {fileID: 0}
 =======
   endScreenUI: {fileID: 1595167715}
 >>>>>>> origin/master
+=======
+  endScreen: {fileID: 1595167722}
+>>>>>>> Stashed changes
 --- !u!4 &1041178115
 Transform:
   m_ObjectHideFlags: 0
@@ -1764,6 +1799,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4933471019015234432, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
   m_PrefabInstance: {fileID: 422716318}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 --- !u!224 &1675226567 stripped
 RectTransform:
@@ -1775,6 +1811,21 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5670056769488733473, guid: 40968bea105253c43b02d403096e15d6, type: 3}
   m_PrefabInstance: {fileID: 1504606076}
 =======
+=======
+--- !u!114 &1595167722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595167715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a0d3e9df6d5ea80a2ba16f7a56eae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endText: {fileID: 2033685366}
+>>>>>>> Stashed changes
 --- !u!114 &1666654512 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8723894650459927281, guid: 40968bea105253c43b02d403096e15d6, type: 3}
@@ -1805,6 +1856,17 @@ MonoBehaviour:
 =======
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 >>>>>>> origin/master
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2033685366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3031459825335938322, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
+  m_PrefabInstance: {fileID: 422716318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2048596559
@@ -1992,6 +2054,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6536442406414331254, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1041178114}
     - target: {fileID: 7883054972590313274, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: m_Name
       value: PlayerBoat
