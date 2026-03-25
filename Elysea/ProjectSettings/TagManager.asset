@@ -11,6 +11,7 @@ TagManager:
   - HealthBar
   - ChildBoss
   - Laser Enemy
+  - DamageZone
   layers:
   - Default
   - TransparentFX

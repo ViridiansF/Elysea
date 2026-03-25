@@ -17,14 +17,14 @@ public class bulletBehavior : MonoBehaviour
     protected Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    protected void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifeTime);
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
         rb.linearVelocity = transform.up * speed;
     }
