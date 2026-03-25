@@ -7,12 +7,14 @@ public class TechEffectApplier : MonoBehaviour
     private movBateauPlayer boatMovement;
     private List<shootBullet> shootSystems;
     private Transform playerTransform;
+    private GameManager gameManager;
 
     private void Awake()
     {
         // Trouver les composants du joueur
         playerHealth = FindAnyObjectByType<PlayerHealth>();
         boatMovement = FindAnyObjectByType<movBateauPlayer>();
+        gameManager = FindAnyObjectByType<GameManager>();
         playerTransform = boatMovement?.transform;
         
         // Trouver tous les systèmes de tir du joueur
@@ -70,7 +72,7 @@ public class TechEffectApplier : MonoBehaviour
         // Portée de vision
         if (tech.GetVisionBonus() > 0)
         {
-            // TODO
+            // TODO : Portée de tir ou champ de vision ?
             Debug.Log($"  → Vision +{tech.GetVisionBonus()} (à implémenter)");
         }
 
