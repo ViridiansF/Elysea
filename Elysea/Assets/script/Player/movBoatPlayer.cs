@@ -78,4 +78,9 @@ public class movBateauPlayer : MonoBehaviour
 
     }
 
+    public void IncreaseMaxSpeed(float amount)
+    {
+        maxSpeed += amount;
+    }
+
 }

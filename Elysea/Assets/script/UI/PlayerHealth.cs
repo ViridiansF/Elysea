@@ -27,4 +27,12 @@ public class PlayerHealth : MonoBehaviour
         healthBar.UpdateBar(maxHealth, currentHealth);
 
     }
+
+    public void IncreaseMaxHealth(float amount)
+    {
+        maxHealth += amount;
+        currentHealth += amount; // Augmente la santé actuelle en même temps
+        healthBar.UpdateBar(maxHealth, currentHealth);
+    }
+
 }
