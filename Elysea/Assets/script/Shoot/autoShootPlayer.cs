@@ -12,13 +12,13 @@ public class autoShootPlayer : shootBullet
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         zone = GetComponent<colliderGoodRange>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(zone.target != null)
         {
