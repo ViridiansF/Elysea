@@ -6,12 +6,14 @@ public class TechEffectApplier : MonoBehaviour
     private PlayerHealth playerHealth;
     private movBateauPlayer boatMovement;
     private List<shootBullet> shootSystems;
+    private Transform playerTransform;
 
     private void Awake()
     {
         // Trouver les composants du joueur
         playerHealth = FindAnyObjectByType<PlayerHealth>();
         boatMovement = FindAnyObjectByType<movBateauPlayer>();
+        playerTransform = boatMovement?.transform;
         
         // Trouver tous les systèmes de tir du joueur
         shootSystems = new List<shootBullet>();
@@ -24,6 +26,12 @@ public class TechEffectApplier : MonoBehaviour
             return;
 
         Debug.Log($"Application de la technologie: {tech.getName()}");
+
+        // Activer une arme si la technologie la déverrouille
+        if (!string.IsNullOrWhiteSpace(tech.GetWeaponToEnable()))
+        {
+            EnableWeapon(tech.GetWeaponToEnable());
+        }
 
         // Santé
         if (tech.GetHealthBonus() > 0 && playerHealth != null)
@@ -86,5 +94,34 @@ public class TechEffectApplier : MonoBehaviour
             // TODO
             Debug.Log($"  → Pollution {tech.GetPollutionBonus()} (à implémenter)");
         }
+    }
+
+    private void EnableWeapon(string weaponName)
+    {
+        if (playerTransform == null)
+            return;
+
+        // Chercher le GameObject enfant avec le nom spécifié
+        Transform weaponTransform = playerTransform.Find(weaponName);
+        
+        if (weaponTransform != null)
+        {
+            weaponTransform.gameObject.SetActive(true);
+            Debug.Log($"  → Arme activée: {weaponName}");
+            
+            // Rafraîchir les systèmes de tir au cas où de nouveaux composants shootBullet auraient été activés
+            RefreshShootSystems();
+        }
+        else
+        {
+            Debug.LogWarning($"Arme '{weaponName}' introuvable sous le joueur!");
+        }
+    }
+
+    // Pour rafraîchir les références aux systèmes de tir (au cas où ils seraient chargés dynamiquement)
+    public void RefreshShootSystems()
+    {
+        shootSystems.Clear();
+        shootSystems.AddRange(FindObjectsByType<shootBullet>(FindObjectsSortMode.None));
     }
 }
