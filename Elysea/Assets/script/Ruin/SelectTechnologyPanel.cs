@@ -25,7 +25,6 @@ public class SelectTechnologyPanel : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Awake");
         // Load technology data from the text file
         foreach(string line in TechFile.text.Split('\n'))
         {
