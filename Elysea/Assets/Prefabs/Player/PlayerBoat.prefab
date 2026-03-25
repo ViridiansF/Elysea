@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 739667614947823253}
+  gameManager: {fileID: 0}
 --- !u!114 &249022841389815808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,48 +578,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 6395928345910999471}
-  m_Layer: 0
-  m_Name: Firing
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6395928345910999471
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2785547602258410011}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2765440515286739110}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3921640422843885609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6279951647141093680}
-  - component: {fileID: 5560448179480144975}
-  - component: {fileID: -7366065232014472904}
-  - component: {fileID: 5857380268572158342}
-=======
   - component: {fileID: 877240219467384355}
   - component: {fileID: 1594526865040788316}
   - component: {fileID: 4813276142022651435}
   - component: {fileID: 739667614947823253}
->>>>>>> origin/master
   m_Layer: 0
   m_Name: PlayerBoat
   m_TagString: Player
@@ -704,11 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
-<<<<<<< HEAD
---- !u!1 &5688295076535208924
-=======
 --- !u!1 &9052810698383351048
->>>>>>> origin/master
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
