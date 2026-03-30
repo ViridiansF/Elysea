@@ -15,4 +15,9 @@ public class StartButton : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+
+    public void Sauvegardes()
+    {
+        SceneManager.LoadScene("Save");
+    }
 }
