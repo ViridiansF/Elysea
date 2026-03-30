@@ -19,7 +19,8 @@ public class TechEffectApplier : MonoBehaviour
         
         // Trouver tous les systèmes de tir du joueur
         shootSystems = new List<shootBullet>();
-        shootSystems.AddRange(FindObjectsByType<shootBullet>(FindObjectsSortMode.None));
+        if (playerTransform != null)
+            shootSystems.AddRange(playerTransform.GetComponentsInChildren<shootBullet>());
     }
 
     public void ApplyTechEffect(Tech tech)
@@ -124,6 +125,7 @@ public class TechEffectApplier : MonoBehaviour
     public void RefreshShootSystems()
     {
         shootSystems.Clear();
-        shootSystems.AddRange(FindObjectsByType<shootBullet>(FindObjectsSortMode.None));
+        if (playerTransform != null)
+            shootSystems.AddRange(playerTransform.GetComponentsInChildren<shootBullet>());
     }
 }

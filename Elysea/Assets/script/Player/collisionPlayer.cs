@@ -13,6 +13,7 @@ public class CollisionPlayer : MonoBehaviour
 
     private float damageTimer = 0f;
 
+    [HideInInspector]
     public GameManager gameManager;
 
     void Awake()
@@ -22,7 +23,13 @@ public class CollisionPlayer : MonoBehaviour
 
     void Start()
     {
-
+        if (gameManager == null){
+            GameManager gameManagerFound = FindAnyObjectByType<GameManager>();
+            if (gameManagerFound != null)
+                gameManager = gameManagerFound;
+            else
+                Debug.LogWarning("CollisionPlayer: GameManager non trouvé");
+        }
     }
 
     void Update()

@@ -11,15 +11,40 @@ public class GameManager : MonoBehaviour
     private bool isWavePhase = false;
     private bool isBossPhase = false;
     public int spawnRadius = 10;
+    [HideInInspector]
     public Transform player;
     public GameObject enemyPrefab;
     public GameObject bossPrefab;
 
-    [Header("UI Settings")]
+    // [Header("UI Settings")]
+    [HideInInspector]
     public EndScreenManager endScreen;
 
     void Start()
     {
+        if (player == null)
+        {
+            GameObject playerBoat = GameObject.Find("PlayerBoat");
+            if (playerBoat != null)
+                player = playerBoat.transform;
+            else
+                Debug.LogWarning("GameManager: PlayerBoat non trouvé");
+        }
+        
+        if (endScreen == null)
+        {
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
+            {
+                Transform endScreenTransform = canvas.transform.Find("EndScreenPanel");
+                if (endScreenTransform != null)
+                    endScreen = endScreenTransform.GetComponent<EndScreenManager>();
+            }
+            
+            if (endScreen == null)
+                Debug.LogWarning("GameManager: EndScreenPanel non trouvé");
+        }
+        
         Time.timeScale = 1f;
     }
 

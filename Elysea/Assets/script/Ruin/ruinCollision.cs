@@ -4,12 +4,34 @@ public class ruinCollision : MonoBehaviour
 {
 
     //[SerializeField] private GameObject choicePanel;
-    [SerializeField] private SelectTechnologyPanel choicePanel;
-    [SerializeField] private GameObject player;
+    [SerializeField]
+    [HideInInspector]
+    private SelectTechnologyPanel choicePanel;
+    [SerializeField]
+    [HideInInspector]
+    private GameObject player;
 
     private void Start()
     {
-
+        if (choicePanel == null){
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null){
+                choicePanel = canvas.GetComponentInChildren<SelectTechnologyPanel>(includeInactive: true);
+                if (choicePanel == null)
+                    Debug.LogWarning("ruinCollision: ChoicePanel non trouvé");
+            }
+            else
+                Debug.LogWarning("ruinCollision: Canvas non trouvé");
+        }
+        
+        if (player == null)
+        {
+            GameObject playerBoat = GameObject.Find("PlayerBoat");
+            if (playerBoat != null)
+                player = playerBoat;
+            else
+                Debug.LogWarning("ruinCollision: PlayerBoat non trouvé");
+        }
     }
 
     private void Choice1Clicked()
