@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private bool isWavePhase = false;
     private bool isBossPhase = false;
     public int spawnRadius = 10;
+    [HideInInspector]
     public Transform player;
     public GameObject enemyPrefab;
     public GameObject bossPrefab;
@@ -20,6 +21,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (player == null)
+        {
+            GameObject playerBoat = GameObject.Find("PlayerBoat");
+            if (playerBoat != null)
+                player = playerBoat.transform;
+            else
+                Debug.LogWarning("GameManager: PlayerBoat non trouvé");
+        }
         Time.timeScale = 1f;
     }
 
