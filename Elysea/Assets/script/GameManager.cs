@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Save
 {
     public float explorationTime = 180;
     public float waveTime = 60;
@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     // [Header("UI Settings")]
     [HideInInspector]
     public EndScreenManager endScreen;
+    private Save.SaveData dataSave;
+    private SelectTechnologyPanel panel;
 
     void Start()
     {
@@ -44,6 +46,14 @@ public class GameManager : MonoBehaviour
             if (endScreen == null)
                 Debug.LogWarning("GameManager: EndScreenPanel non trouvé");
         }
+        
+        panel = FindFirstObjectByType<SelectTechnologyPanel>();
+
+
+        dataSave = GetSave(getNumSave());
+        ReadDataSave();
+
+
         
         Time.timeScale = 1f;
     }
@@ -103,8 +113,33 @@ public class GameManager : MonoBehaviour
 
     void WinGame()
     {
+        if(dataSave.level +1 >= dataSave.endLevel)
+        {
+            WriteDataSave();
+        }
         endScreen.Show("BRAVO, TU AS SURVÉCU !");
         PauseGame();
+    }
+
+    private void ReadDataSave()
+    {
+        player.GetComponent<PlayerHealth>().SetHealth(dataSave.health, dataSave.currentHealth);
+        
+        if (dataSave.technology != null)
+        {
+            foreach (Tech tech in dataSave.technology)
+            {
+                panel.setActualTechnology(tech);
+            }
+        }
+    }
+
+    private void WriteDataSave()
+    {
+        dataSave.currentHealth = player.GetComponent<PlayerHealth>().GetCurrentHealth();
+        dataSave.health = player.GetComponent<PlayerHealth>().GetMaxHealth();
+        dataSave.technology = panel.getCurrentTechnology();
+        WriteSave(getNumSave(), dataSave);
     }
 
     public void GameOver()
