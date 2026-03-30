@@ -22,6 +22,7 @@ public class SelectTechnologyPanel : MonoBehaviour
     private List<Tech> randomValues = new List<Tech>();
     private Tech techTemp;
     private bool match = false;
+    private bool isAllowUpRocket = false;
 
     private void Awake()
     {
@@ -62,10 +63,18 @@ public class SelectTechnologyPanel : MonoBehaviour
         // Allow technologie with uranium
         foreach (Tech tech in CurrentTechnologies) if(tech.getName() == "Lab. Nucléaire") isAllowUr = true;
 
+        // Allow upgrade Lance-Roquette
+        foreach (Tech tech in CurrentTechnologies) if(tech.getName() == "Lance-Roquette") isAllowUpRocket = true;
+
         // Technologies that are currently available to the player
         foreach (Tech tech in AllTechnologies)
         {
             if (tech.getLockCondition()=="" || (isAllowUr && tech.getLockCondition() == "Lab. Nucléaire"))
+            {
+                AllowTechnologies.Add(tech);
+                //Debug.Log(tech.getName());
+            }
+            if (isAllowUpRocket && isAllowUr && tech.getLockCondition() == "Lance-Roquette")
             {
                 AllowTechnologies.Add(tech);
                 //Debug.Log(tech.getName());

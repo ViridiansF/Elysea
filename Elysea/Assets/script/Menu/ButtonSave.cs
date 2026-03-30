@@ -24,10 +24,9 @@ public class SaveButton : MonoBehaviour
     public void Start()
     {
         
-
-
-
-
+        save1 = LoadGame("save1.json");
+        save2 = LoadGame("save2.json");
+        save3 = LoadGame("save3.json");
 
         if (save1 == null)
         {
@@ -75,10 +74,42 @@ public class SaveButton : MonoBehaviour
             Debug.Log("Niveau : " + data.niveau);
         }
         else createGame(numSave);
+
+        PlayerPrefs.SetInt("SaveSlot", numSave);
+        //LaunchGame();
     }
 
     public void createGame(int numSave)
     {
+        SaveData data = new SaveData();
+
+        // Valeurs de départ
+        data.niveau = 1;
+        data.vie = 100f;
+        data.technology = new List<Tech>();
+
+        string path = Application.persistentDataPath + "/save" + numSave + ".json";
+
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(path, json);
+
+        Debug.Log("Nouvelle sauvegarde créée : " + path);
         
+    }
+
+    SaveData LoadGame(string fileName)
+    {
+        string path = Application.persistentDataPath + "/" + fileName;
+
+        if (!File.Exists(path))
+            return null;
+
+        string json = File.ReadAllText(path);
+        return JsonUtility.FromJson<SaveData>(json);
+    }
+
+    void LaunchGame(SaveData data)
+    {
+        SceneManager.LoadScene("Niveau " + data.niveau);
     }
 }
