@@ -44,4 +44,9 @@ public abstract class shootBullet : shoot
         bulletScript.lifeTime = lifeTime;
 
     }
+
+    public void IncrementDamage(int amount)
+    {
+        damage += amount;
+    }
 }
