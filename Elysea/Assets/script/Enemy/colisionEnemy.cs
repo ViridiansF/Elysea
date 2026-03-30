@@ -53,7 +53,7 @@ public class colisionEnemy : MonoBehaviour
         //Debug.Log("Trigger détecté par : " + gameObject.name);
         //Debug.Log("Objet touché : " + other.gameObject.name + " tag=" + other.tag);
 
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet") || other.CompareTag("DamageZone"))
         {
             pv -= other.GetComponent<bulletBehavior>().damage;
             Debug.Log("PV ennemi : " + pv);

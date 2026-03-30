@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5821198169913559530}
   - component: {fileID: 7197856827569484970}
   - component: {fileID: 593906994730099589}
-  - component: {fileID: 2809017665100579262}
+  - component: {fileID: 8097014475452363661}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865681554535366910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35fa4604258288cb082db348809370c4, type: 3}
   m_Name: 
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!114 &2809017665100579262
+--- !u!114 &8097014475452363661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,14 +187,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 865681554535366910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35fa4604258288cb082db348809370c4, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d99d4c9a42785afb262f2326ca6d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anchoring: {fileID: 6656520100118805705}
-  bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
+  bulletPrefab: {fileID: 4866956070537711061, guid: 73f92d30cba06bef193e9c48c5b2368e, type: 3}
   firingPoint: {fileID: 272658428446580412}
-  fireRate: 0.1
-  damage: 1
+  fireRate: 0.5
+  damage: 5
   pierce: 1
   knockback: 1
   speedBullet: 5
@@ -599,7 +599,7 @@ Transform:
   m_GameObject: {fileID: 7883054972590313274}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.51, y: 0, z: 0}
+  m_LocalPosition: {x: -9.38, y: 1.5174608, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
