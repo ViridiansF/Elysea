@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject bossPrefab;
 
-    [Header("UI Settings")]
+    // [Header("UI Settings")]
+    [HideInInspector]
     public EndScreenManager endScreen;
 
     void Start()
@@ -29,6 +30,21 @@ public class GameManager : MonoBehaviour
             else
                 Debug.LogWarning("GameManager: PlayerBoat non trouvé");
         }
+        
+        if (endScreen == null)
+        {
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
+            {
+                Transform endScreenTransform = canvas.transform.Find("EndScreenPanel");
+                if (endScreenTransform != null)
+                    endScreen = endScreenTransform.GetComponent<EndScreenManager>();
+            }
+            
+            if (endScreen == null)
+                Debug.LogWarning("GameManager: EndScreenPanel non trouvé");
+        }
+        
         Time.timeScale = 1f;
     }
 
