@@ -764,6 +764,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4253389464092271534, guid: 40968bea105253c43b02d403096e15d6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.3746033
+      objectReference: {fileID: 0}
     - target: {fileID: 5226019114193129692, guid: 40968bea105253c43b02d403096e15d6, type: 3}
       propertyPath: m_Name
       value: ChoicePanel
