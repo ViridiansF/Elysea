@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
     [HideInInspector]
     public Image healthBarImage;
+    [HideInInspector]
+    public TextMeshProUGUI healthText;
 
     private void Start()
     {
@@ -21,6 +24,21 @@ public class HealthBar : MonoBehaviour
             else
                 Debug.LogWarning("HealthBar: GameObject non trouvé");
         }
+
+        if (healthText == null)
+        {
+            GameObject healthTextObj = GameObject.Find("Canvas/HealthBarBackground/HealthText");
+
+            if (healthTextObj != null)
+            {
+                healthText = healthTextObj.GetComponent<TextMeshProUGUI>();
+                if (healthText == null)
+                    Debug.LogWarning("HealthBar: pas de composante TextMeshProUGUI");
+            }
+            else
+                Debug.LogWarning("HealthBar: GameObject non trouvé");
+        }
+
     }
 
     internal void UpdateBar(float maxHealth, float currentHealth)
@@ -30,5 +48,10 @@ public class HealthBar : MonoBehaviour
 
         float fillValue = currentHealth / maxHealth;
         healthBarImage.fillAmount = fillValue;
+
+        if (healthText != null)
+        {
+            healthText.text = $"{currentHealth:F0} / {maxHealth:F0}";
+        }
     }
 }
