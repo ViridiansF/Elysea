@@ -15,7 +15,6 @@ public class Bullet_rocketBehavior : bulletBehavior
     //     }
     // }
 
-    private bool isQuitting = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
