@@ -92,6 +92,7 @@ public class GameManager : Save
         if (isBossPhase && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             WinGame();
+            isBossPhase = false;
         }
     }
 
@@ -125,17 +126,24 @@ public class GameManager : Save
 
     void WinGame()
     {
-        if(dataSave.level +1 >= dataSave.endLevel)
+        if(dataSave.level < dataSave.endLevel)
         {
             WriteDataSave();
+            endScreen.WinConfig();
         }
-        endScreen.Show("BRAVO, TU AS SURVÉCU !");
+        else
+        {
+            DeleteSave(getNumSave());
+            endScreen.EndConfig();
+        }
+        
+        endScreen.Show("BRAVO, TU AS GAGNÉ !");
         PauseGame();
     }
 
     private void ReadDataSave()
     {
-        player.GetComponent<PlayerHealth>().SetHealth(dataSave.health, dataSave.currentHealth);
+        player.GetComponent<PlayerHealth>().SetHealth(dataSave.currentHealth);
         
         if (dataSave.technology != null)
         {
@@ -149,11 +157,12 @@ public class GameManager : Save
     private void WriteDataSave()
     {
         dataSave.currentHealth = player.GetComponent<PlayerHealth>().GetCurrentHealth();
-        dataSave.health = player.GetComponent<PlayerHealth>().GetMaxHealth();
-        if(panel.getCurrentTechnology() != null)
-        {
-            dataSave.technology = panel.getCurrentTechnology();
-        }
+        dataSave.level += 1;
+        Debug.Log("Sauvegarde du niveau " + dataSave.level);
+        Debug.Log("Tech sélectionnée à sauvegarder : " + panel.getCurrentTechnology()?.Count);
+        dataSave.technology = panel.getCurrentTechnology();
+        Debug.Log("Tech sélectionnée sauvegardée : " + dataSave.technology?.Count);
+
         WriteSave(getNumSave(), dataSave);
     }
 

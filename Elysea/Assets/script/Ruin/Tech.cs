@@ -1,23 +1,24 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Tech
 {
-    private string nameTech;
-    private bool duplicity;
-    private string lockCondition;
+    [SerializeField]private string nameTech;
+    [SerializeField]private bool duplicity;
+    [SerializeField]private string lockCondition;
 
     // Bonus des technologies (colonnes 4-10 du CSV)
-    private float healthBonus;
-    private float visionBonus;
-    private float nuclearWasteBonus;
-    private float damageBonus;
-    private float electricityBonus;
-    private float windSpeedBonus;
-    private float speedBonus;
-    private float pollutionBonus;
+    [SerializeField]private float healthBonus;
+    [SerializeField]private float visionBonus;
+    [SerializeField]private float nuclearWasteBonus;
+    [SerializeField]private float damageBonus;
+    [SerializeField]private float electricityBonus;
+    [SerializeField]private float windSpeedBonus;
+    [SerializeField]private float speedBonus;
+    [SerializeField]private float pollutionBonus;
 
     // Arme à activer si la technologie la déverrouille
-    private string weaponToEnable;
+    [SerializeField]private string weaponToEnable;
 
     public Tech(string name, string duplicity, string lockCondition,
                 string health = "", string vision = "", string nuclearWaste = "",
