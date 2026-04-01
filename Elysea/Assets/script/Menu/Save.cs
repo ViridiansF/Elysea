@@ -11,7 +11,6 @@ public class Save:MonoBehaviour
     {
         public int level;
         public int endLevel;
-        public float health;
         public float currentHealth;
         public float pollution;
         public List<Tech> technology;
@@ -63,14 +62,14 @@ public class Save:MonoBehaviour
         else data = createNewGame(numSave);
 
         PlayerPrefs.SetInt("SaveSlot", numSave);
-        LaunchGame(data, numSave);
+        LaunchGame(numSave);
     }
     protected SaveData GetSave(int numSave)
     {
         string path = Application.persistentDataPath + "/save" + numSave + ".json";
         if (!File.Exists(path))
         {
-            Debug.Log("Aucune sauvegarde trouvée pour le slot " + numSave + ". Création d'une nouvelle sauvegarde.");
+            Debug.Log("Aucune sauvegarde trouvée pour le slot " + numSave );
         }
         else
         {
@@ -87,21 +86,17 @@ public class Save:MonoBehaviour
         // Valeurs de départ
         data.level = 1;
         data.endLevel = 2;
-        data.health = 100f;
+        data.currentHealth = 10f;
         data.pollution = 0f;
         data.technology = new List<Tech>();
 
-        string path = Application.persistentDataPath + "/save" + numSave + ".json";
+        WriteSave(numSave, data);
 
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(path, json);
-
-        Debug.Log("Nouvelle sauvegarde créée : " + path);
         return data;
     }
-    private void LaunchGame(SaveData data, int numSave)
+    private void LaunchGame(int numSave)
     {
         setNumSave(numSave);
-        SceneManager.LoadScene("Level" + data.level);
+        SceneManager.LoadScene("Level" + GetSave(numSave).level);
     }
 }

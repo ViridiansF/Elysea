@@ -32,14 +32,13 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void SetHealth(float health, float currentHealthGive)
+    public void SetHealth(float currentHealthGive)
     {
         //Quand on charge une partie sans sauvegarde
         if(currentHealthGive == 0)
         {
-            currentHealthGive = health;
+            currentHealthGive = maxHealth;
         }
-        maxHealth = health;
         currentHealth = currentHealthGive;
         healthBar.UpdateBar(maxHealth, currentHealth);
     }

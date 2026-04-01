@@ -800,6 +800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBoat
       objectReference: {fileID: 0}
+    - target: {fileID: 5467575159069244129, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      propertyPath: selectTechnolyPanel
+      value: 
+      objectReference: {fileID: 1192415322}
     - target: {fileID: 5857380268572158342, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: maxHealth
       value: 20
