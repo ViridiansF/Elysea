@@ -26,7 +26,7 @@ MonoBehaviour:
     height: 772.8
 >>>>>>> origin/master
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -144,8 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 90
->>>>>>> origin/master
+  controlID: 36
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -1066,11 +1065,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-<<<<<<< HEAD
-      m_ExpandedIDs: 5030ffff5430ffff8030ffff8430ffff9030ffff123cffff1e3cffff664effffb04effffca4effffdc4effff1a5fffffa68dffff408effffd49cffffde9cfffff89cffff189dffff8a9effff4aa6ffff08a7ffff9eabfffffcacffff20b0ffff94bdffffe2d7ffff80faffff0cfbffff6ab2000000be00006cc2000088c2000092c20000d0c20000e6c900008ecb0000b4cb000004cd00002ecd0000bad50000e4d50000
-=======
-      m_ExpandedIDs: 64fefeff1e01ffffe254ffffc4aaffff00aeffff82c3ffffded3ffff4cd4ffffb2d6ffff66f4ffff0afbffff2cb60000bcbb000050c10000ccc80000dcd20000dae60000
->>>>>>> origin/master
+      m_ExpandedIDs: b0faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1284,7 +1279,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/script/Shoot
+    - Assets/script/Menu
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1294,23 +1289,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/script/Shoot
+  - Assets/script/Menu
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\wehrl\Desktop\Elysea\Git\Elysea
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 198}
-    m_SelectedIDs: 12bd0000
-    m_LastClickedID: 48402
-    m_ExpandedIDs: 0000000068b60000
-=======
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 0cb80000
-    m_LastClickedID: 47116
-    m_ExpandedIDs: 0000000046b5000048b500004ab500004cb500004eb5000050b5000052b5000054b5000056b50000
->>>>>>> origin/master
+    scrollPos: {x: 0, y: 258.80002}
+    m_SelectedIDs: b6b50000
+    m_LastClickedID: 46518
+    m_ExpandedIDs: 00000000e6b40000e8b40000eab40000ecb40000eeb40000f0b40000f2b40000f4b40000f6b40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1339,11 +1327,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 0000000068b60000
-=======
-    m_ExpandedIDs: 0000000046b5000048b500004ab500004cb500004eb5000050b5000052b5000054b5000056b50000
->>>>>>> origin/master
+    m_ExpandedIDs: 00000000e6b40000e8b40000eab40000ecb40000eeb40000f0b40000f2b40000f4b40000f6b40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

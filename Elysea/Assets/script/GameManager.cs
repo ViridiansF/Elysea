@@ -46,8 +46,20 @@ public class GameManager : Save
             if (endScreen == null)
                 Debug.LogWarning("GameManager: EndScreenPanel non trouvé");
         }
-        
-        panel = FindFirstObjectByType<SelectTechnologyPanel>();
+
+        if (panel == null)
+        {
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
+            {
+                Transform choicePanelTransform = canvas.transform.Find("ChoicePanel");
+                if (choicePanelTransform != null)
+                    panel = choicePanelTransform.GetComponent<SelectTechnologyPanel>();
+            }
+            
+            if (panel == null)
+                Debug.LogWarning("GameManager: ChoicePanel non trouvé");
+        }
 
 
         dataSave = GetSave(getNumSave());
@@ -138,7 +150,10 @@ public class GameManager : Save
     {
         dataSave.currentHealth = player.GetComponent<PlayerHealth>().GetCurrentHealth();
         dataSave.health = player.GetComponent<PlayerHealth>().GetMaxHealth();
-        dataSave.technology = panel.getCurrentTechnology();
+        if(panel.getCurrentTechnology() != null)
+        {
+            dataSave.technology = panel.getCurrentTechnology();
+        }
         WriteSave(getNumSave(), dataSave);
     }
 

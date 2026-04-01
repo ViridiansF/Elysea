@@ -132,6 +132,7 @@ public class SelectTechnologyPanel : MonoBehaviour
 
     public List<Tech> getCurrentTechnology()
     {
+        if (CurrentTechnologies.Count == 0) return null;
         return CurrentTechnologies;
     }
 

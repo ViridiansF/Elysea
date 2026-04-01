@@ -34,8 +34,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void SetHealth(float health, float currentHealthGive)
     {
-        Debug.Log("SetHealth called with health: " + health + " and currentHealthGive: " + currentHealthGive);
-        Debug.Log(healthBar != null ? "HealthBar is not null" : "HealthBar is null");
+        //Quand on charge une partie sans sauvegarde
+        if(currentHealthGive == 0)
+        {
+            currentHealthGive = health;
+        }
         maxHealth = health;
         currentHealth = currentHealthGive;
         healthBar.UpdateBar(maxHealth, currentHealth);
