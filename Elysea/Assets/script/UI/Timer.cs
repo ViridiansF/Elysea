@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [HideInInspector]
     public GameManager gameManager;
     private TextMeshProUGUI text;
     private int minutes;
@@ -11,6 +12,13 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (gameManager == null){
+            GameManager gameManagerFind = FindAnyObjectByType<GameManager>();
+            if (gameManagerFind != null)
+                gameManager = gameManagerFind; 
+            else
+                Debug.LogWarning("Timer: GameManager non trouvé");
+        }
         text = GetComponent<TextMeshProUGUI>(); 
     }
 

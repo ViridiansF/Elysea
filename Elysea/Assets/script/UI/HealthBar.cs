@@ -3,13 +3,32 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-
+    [HideInInspector]
     public Image healthBarImage;
+
+    private void Start()
+    {
+        if (healthBarImage == null)
+        {
+            GameObject healthBarFilled = GameObject.Find("Canvas/HealthBarBackground/HealthBarFilled");
+
+            if (healthBarFilled != null)
+            {
+                healthBarImage = healthBarFilled.GetComponent<Image>();
+                if (healthBarImage == null)
+                    Debug.LogWarning("HealthBar: pas de composante Image");
+            }
+            else
+                Debug.LogWarning("HealthBar: GameObject non trouvé");
+        }
+    }
 
     internal void UpdateBar(float maxHealth, float currentHealth)
     {
-        float fillValue = currentHealth / maxHealth;
+        if (healthBarImage == null)
+            return;
 
+        float fillValue = currentHealth / maxHealth;
         healthBarImage.fillAmount = fillValue;
     }
 }

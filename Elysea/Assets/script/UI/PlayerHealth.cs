@@ -7,10 +7,14 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     HealthBar healthBar;
 
+    void Awake()
+    {
+        healthBar = GetComponentInChildren<HealthBar>();
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar = GetComponentInChildren<HealthBar>();
         if (healthBar != null)
         {
             healthBar.UpdateBar(maxHealth, currentHealth);
@@ -28,11 +32,30 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void SetHealth(float health, float currentHealthGive)
+    {
+        Debug.Log("SetHealth called with health: " + health + " and currentHealthGive: " + currentHealthGive);
+        Debug.Log(healthBar != null ? "HealthBar is not null" : "HealthBar is null");
+        maxHealth = health;
+        currentHealth = currentHealthGive;
+        healthBar.UpdateBar(maxHealth, currentHealth);
+    }
+
     public void IncreaseMaxHealth(float amount)
     {
         maxHealth += amount;
         currentHealth += amount; // Augmente la santé actuelle en même temps
         healthBar.UpdateBar(maxHealth, currentHealth);
+    }
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 
 }

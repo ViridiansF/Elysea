@@ -1,58 +1,47 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.IO;
 
-public class SaveButton : MonoBehaviour
+
+public class SaveButton : Save
 {
     public TextMeshProUGUI buttonSave1;
     public TextMeshProUGUI buttonSave2;
     public TextMeshProUGUI buttonSave3;
 
-    [System.Serializable]
-    public class SaveData
-    {
-        public int niveau;
-        public float vie;
-        public List<Tech> technology;
-    }
-    SaveData save1;
-    SaveData save2;
-    SaveData save3;
+    
 
     public void Start()
     {
         
-        save1 = LoadGame("save1.json");
-        save2 = LoadGame("save2.json");
-        save3 = LoadGame("save3.json");
-
-        if (save1 == null)
+        save = GetSave(1);
+        if (save == null)
         {
             buttonSave1.text = "Sauvegarde 1\nNew";
         }
         else
         {
-            buttonSave1.text = "Sauvegarde 1\nNiveau = " + save1.niveau;
+            buttonSave1.text = "Sauvegarde 1\nNiveau = " + save.level;
         }
 
-        if (save2 == null)
+        save = GetSave(2);
+        if (save == null)
         {
             buttonSave2.text = "Sauvegarde 2\nNew";
         }
         else
         {
-            buttonSave2.text = "Sauvegarde 2\nNiveau = " + save2.niveau;
+            buttonSave2.text = "Sauvegarde 2\nNiveau = " + save.level;
         }
 
-        if (save3 == null)
+        save = GetSave(3);
+        if (save == null)
         {
             buttonSave3.text = "Sauvegarde 3\nNew";
         }
         else
         {
-            buttonSave3.text = "Sauvegarde 3\nNiveau = " + save3.niveau;
+            buttonSave3.text = "Sauvegarde 3\nNiveau = " + save.level;
         }
         
     }
@@ -62,54 +51,11 @@ public class SaveButton : MonoBehaviour
         SceneManager.LoadScene("Menu Principal");
     }
 
-    public void Save(int numSave)
+    public new void DeleteSave(int numSave)
     {
-        string path = Application.persistentDataPath + "/save" + numSave + ".json";
-
-        if (File.Exists(path))
-        {
-            string json = File.ReadAllText(path);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
-
-            Debug.Log("Niveau : " + data.niveau);
-        }
-        else createGame(numSave);
-
-        PlayerPrefs.SetInt("SaveSlot", numSave);
-        //LaunchGame();
+        base.DeleteSave(numSave);
+        Start();
     }
 
-    public void createGame(int numSave)
-    {
-        SaveData data = new SaveData();
 
-        // Valeurs de départ
-        data.niveau = 1;
-        data.vie = 100f;
-        data.technology = new List<Tech>();
-
-        string path = Application.persistentDataPath + "/save" + numSave + ".json";
-
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(path, json);
-
-        Debug.Log("Nouvelle sauvegarde créée : " + path);
-        
-    }
-
-    SaveData LoadGame(string fileName)
-    {
-        string path = Application.persistentDataPath + "/" + fileName;
-
-        if (!File.Exists(path))
-            return null;
-
-        string json = File.ReadAllText(path);
-        return JsonUtility.FromJson<SaveData>(json);
-    }
-
-    void LaunchGame(SaveData data)
-    {
-        SceneManager.LoadScene("Niveau " + data.niveau);
-    }
 }

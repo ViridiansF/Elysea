@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Save
 {
     public float explorationTime = 180;
     public float waveTime = 60;
@@ -11,15 +11,50 @@ public class GameManager : MonoBehaviour
     private bool isWavePhase = false;
     private bool isBossPhase = false;
     public int spawnRadius = 10;
+    [HideInInspector]
     public Transform player;
     public GameObject enemyPrefab;
     public GameObject bossPrefab;
 
-    [Header("UI Settings")]
+    // [Header("UI Settings")]
+    [HideInInspector]
     public EndScreenManager endScreen;
+    private Save.SaveData dataSave;
+    private SelectTechnologyPanel panel;
 
     void Start()
     {
+        if (player == null)
+        {
+            GameObject playerBoat = GameObject.Find("PlayerBoat");
+            if (playerBoat != null)
+                player = playerBoat.transform;
+            else
+                Debug.LogWarning("GameManager: PlayerBoat non trouvé");
+        }
+        
+        if (endScreen == null)
+        {
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
+            {
+                Transform endScreenTransform = canvas.transform.Find("EndScreenPanel");
+                if (endScreenTransform != null)
+                    endScreen = endScreenTransform.GetComponent<EndScreenManager>();
+            }
+            
+            if (endScreen == null)
+                Debug.LogWarning("GameManager: EndScreenPanel non trouvé");
+        }
+        
+        panel = FindFirstObjectByType<SelectTechnologyPanel>();
+
+
+        dataSave = GetSave(getNumSave());
+        ReadDataSave();
+
+
+        
         Time.timeScale = 1f;
     }
 
@@ -78,8 +113,33 @@ public class GameManager : MonoBehaviour
 
     void WinGame()
     {
+        if(dataSave.level +1 >= dataSave.endLevel)
+        {
+            WriteDataSave();
+        }
         endScreen.Show("BRAVO, TU AS SURVÉCU !");
         PauseGame();
+    }
+
+    private void ReadDataSave()
+    {
+        player.GetComponent<PlayerHealth>().SetHealth(dataSave.health, dataSave.currentHealth);
+        
+        if (dataSave.technology != null)
+        {
+            foreach (Tech tech in dataSave.technology)
+            {
+                panel.setActualTechnology(tech);
+            }
+        }
+    }
+
+    private void WriteDataSave()
+    {
+        dataSave.currentHealth = player.GetComponent<PlayerHealth>().GetCurrentHealth();
+        dataSave.health = player.GetComponent<PlayerHealth>().GetMaxHealth();
+        dataSave.technology = panel.getCurrentTechnology();
+        WriteSave(getNumSave(), dataSave);
     }
 
     public void GameOver()
