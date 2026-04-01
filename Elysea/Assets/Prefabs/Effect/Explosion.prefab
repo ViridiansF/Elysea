@@ -175,11 +175,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7399040815327299784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90250062602b269439af29f9a42c892b, type: 3}
+  m_Script: {fileID: 11500000, guid: 77548dadf58c12645850234fc8e33f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
   pierce: 100
   knockback: 1
-  speed: 1
-  lifeTime: 1
+  speed: 10
+  lifeTime: 3

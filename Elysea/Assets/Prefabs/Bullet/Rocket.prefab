@@ -176,12 +176,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4866956070537711061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b69829ce78648b957bb5ee4266e732b5, type: 3}
+  m_Script: {fileID: 11500000, guid: b5df5df48b6511e48a8b1027f1c99ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
   pierce: 1
   knockback: 1
-  speed: 1
+  speed: 10
   lifeTime: 3
-  ExplosionPrefab: {fileID: 7399040815327299784, guid: ce8695614e24d427287fe243a6676bbd, type: 3}
+  ExplosionPrefab: {fileID: 7399040815327299784, guid: 9865ad725dbb19b4494d9b309aec4dda, type: 3}
+  isNuklear: 1
