@@ -4,6 +4,16 @@ public class Bullet_rocketBehavior : bulletBehavior
 {
 
     [SerializeField] private GameObject ExplosionPrefab;
+    [SerializeField] public bool isNuklear = true;
+    private float explosionRadius = 5f;
+
+    // protected override void Start()
+    // {
+    //     base.Start();
+    //     if(!isNuklear) {
+    //         ExplosionPrefab.transform.localScale = new Vector3(ExplosionPrefab.transform.localScale.x * 0.25, ExplosionPrefab.transform.localScale.y * 0.25, ExplosionPrefab.transform.localScale.z);
+    //     }
+    // }
 
     private bool isQuitting = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -11,6 +21,12 @@ public class Bullet_rocketBehavior : bulletBehavior
     {
         rb = GetComponent<Rigidbody2D>();
         Invoke("Explode", lifeTime);
+        if(!isNuklear) {
+            explosionRadius *= 0.25f;
+        } else
+        {
+            explosionRadius *= 1f;
+        }
     }
 
     // // Update is called once per frame
@@ -30,7 +46,7 @@ public class Bullet_rocketBehavior : bulletBehavior
     private void Explode()
     {
         // CancelInvoke();
-        Instantiate(ExplosionPrefab, transform.position, transform.rotation);
-        Destroy(gameObject);
+        GameObject explosion = Instantiate(ExplosionPrefab, transform.position, transform.rotation);
+        explosion.transform.localScale = new Vector3(explosionRadius, explosionRadius, 1f);
     }
 }

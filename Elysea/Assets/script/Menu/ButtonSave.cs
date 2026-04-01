@@ -14,34 +14,34 @@ public class SaveButton : Save
     public void Start()
     {
         
-        save = GetSave("save1.json");
+        save = GetSave(1);
         if (save == null)
         {
             buttonSave1.text = "Sauvegarde 1\nNew";
         }
         else
         {
-            buttonSave1.text = "Sauvegarde 1\nNiveau = " + save.niveau;
+            buttonSave1.text = "Sauvegarde 1\nNiveau = " + save.level;
         }
 
-        save = GetSave("save2.json");
+        save = GetSave(2);
         if (save == null)
         {
             buttonSave2.text = "Sauvegarde 2\nNew";
         }
         else
         {
-            buttonSave2.text = "Sauvegarde 2\nNiveau = " + save.niveau;
+            buttonSave2.text = "Sauvegarde 2\nNiveau = " + save.level;
         }
 
-        save = GetSave("save3.json");
+        save = GetSave(3);
         if (save == null)
         {
             buttonSave3.text = "Sauvegarde 3\nNew";
         }
         else
         {
-            buttonSave3.text = "Sauvegarde 3\nNiveau = " + save.niveau;
+            buttonSave3.text = "Sauvegarde 3\nNiveau = " + save.level;
         }
         
     }
