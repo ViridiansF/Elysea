@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6109242637353484197}
+      - m_Target: {fileID: 998502579413377465}
         m_TargetAssemblyTypeName: EndScreenManager, Assembly-CSharp
         m_MethodName: MenuPrincipal
         m_Mode: 1
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6109242637353484197}
+      - m_Target: {fileID: 998502579413377465}
         m_TargetAssemblyTypeName: EndScreenManager, Assembly-CSharp
         m_MethodName: Quitter
         m_Mode: 1
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6109242637353484197}
+      - m_Target: {fileID: 998502579413377465}
         m_TargetAssemblyTypeName: EndScreenManager, Assembly-CSharp
         m_MethodName: Rejouer
         m_Mode: 1
@@ -953,8 +953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4933471019015234432}
   - component: {fileID: 433300655375292633}
-  - component: {fileID: 122296200107197035}
-  - component: {fileID: 6109242637353484197}
+  - component: {fileID: 998502579413377465}
   m_Layer: 5
   m_Name: EndScreenPanel
   m_TagString: Untagged
@@ -993,37 +992,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7999794986955731884}
   m_CullTransparentMesh: 1
---- !u!114 &122296200107197035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7999794986955731884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &6109242637353484197
+--- !u!114 &998502579413377465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

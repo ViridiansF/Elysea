@@ -7,13 +7,28 @@ public class CameraScript : MonoBehaviour
 
 
     [SerializeField] private Vector3 offset;
-    [SerializeField] public Transform target;
+    [SerializeField]
+    [HideInInspector]
+    public Transform target;
 
     //The speed of the movement
     public float cameraSpeed = 0.1f;
 
 
     private Vector3 vel = Vector3.zero;
+
+    void Start()
+    {
+        if (target == null)
+        {
+            GameObject playerBoat = GameObject.Find("PlayerBoat");
+            if (playerBoat != null)
+                target = playerBoat.transform;
+            else
+                Debug.LogWarning("CameraScript: PlayerBoat non trouvé");
+        }
+    }
+
     void FixedUpdate()
     {
 

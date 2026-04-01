@@ -8,6 +8,11 @@ public class StartButton : MonoBehaviour
         SceneManager.LoadScene("Tuto");
     }
 
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
     public void Quitter()
     {
         Application.Quit();
