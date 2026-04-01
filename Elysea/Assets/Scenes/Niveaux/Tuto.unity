@@ -1257,12 +1257,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 337602355183508591, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: enemyPrefab1
+      value: 
+      objectReference: {fileID: 337602355183508591, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: enemyPrefab2
+      value: 
+      objectReference: {fileID: 337602355183508591, guid: c1c1bf42ab6ae9e4698deae41edaef0a, type: 3}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: enemiesToSpawn
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: enemiesToSpawn1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: enemiesToSpawn2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: explorationTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
+      propertyPath: spawnRadiusBoss
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

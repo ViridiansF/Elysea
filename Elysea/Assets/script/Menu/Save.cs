@@ -79,13 +79,14 @@ public class Save:MonoBehaviour
         return null;        
     }
 
-    private SaveData createNewGame(int numSave)
+    public SaveData createNewGame(int numSave)
     {
         SaveData data = new SaveData();
 
         // Valeurs de départ
         data.level = 1;
-        data.endLevel = 2;
+        if (numSave == 0) data.endLevel = 1;
+        else data.endLevel = 2;
         data.currentHealth = 10f;
         data.pollution = 0f;
         data.technology = new List<Tech>();

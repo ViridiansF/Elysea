@@ -5,25 +5,34 @@ public class GameManager : Save
 {
     public float explorationTime = 180;
     public float waveTime = 60;
-    public int enemiesToSpawn = 20;
+    public int enemiesToSpawn1 = 20;
+    public int enemiesToSpawn2 = 10;
     private float tempsPasse = 0;
     private bool isExplorationPhase = true;
     private bool isWavePhase = false;
     private bool isBossPhase = false;
-    public int spawnRadius = 10;
+    public int spawnRadiusMin1 = 10;
+    public int spawnRadiusMax1 = 20;
+    public int spawnRadiusMin2 = 10;
+    public int spawnRadiusMax2 = 20;
+    public int spawnRadiusBoss = 30;
     [HideInInspector]
     public Transform player;
-    public GameObject enemyPrefab;
+    public GameObject enemyPrefab1;
+    public GameObject enemyPrefab2;
     public GameObject bossPrefab;
+    private string sceneName;
 
     // [Header("UI Settings")]
     [HideInInspector]
     public EndScreenManager endScreen;
-    private Save.SaveData dataSave;
+    private SaveData dataSave;
     private SelectTechnologyPanel panel;
 
     void Start()
     {
+        sceneName = SceneManager.GetActiveScene().name;
+        
         if (player == null)
         {
             GameObject playerBoat = GameObject.Find("PlayerBoat");
@@ -61,10 +70,14 @@ public class GameManager : Save
                 Debug.LogWarning("GameManager: ChoicePanel non trouvé");
         }
 
-
+        if (sceneName == "Tuto") 
+        {
+            setNumSave(0);
+            createNewGame(0);
+        }
+        
         dataSave = GetSave(getNumSave());
-        ReadDataSave();
-
+        ReadDataSave();      
 
         
         Time.timeScale = 1f;
@@ -98,17 +111,32 @@ public class GameManager : Save
 
     void SpawnEnemies()
     {
-        for (int i = 0; i < enemiesToSpawn; i++)
+        for (int i = 0; i < enemiesToSpawn1; i++)
         {
-            // Générer un angle aléatoire
+            // Génération aléatoire
             float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+            float distance = Random.Range(spawnRadiusMin1, spawnRadiusMax1);
 
             // Calculer la position autour du joueur
-            Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadius;
+            Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
 
             // Instancier l'ennemi
-            Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            Instantiate(enemyPrefab1, spawnPos, Quaternion.identity);
         }
+
+        for (int i = 0; i < enemiesToSpawn2; i++)
+        {
+            // Génération aléatoire
+            float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+            float distance = Random.Range(spawnRadiusMin2, spawnRadiusMax2);
+
+            // Calculer la position autour du joueur
+            Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
+
+            // Instancier l'ennemi
+            Instantiate(enemyPrefab2, spawnPos, Quaternion.identity);
+        }
+
     }
     void SpawnBoss()
     {
@@ -117,7 +145,7 @@ public class GameManager : Save
         float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
 
         // Calculer la position autour du joueur
-        Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadius;
+        Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadiusBoss;
 
         // Instancier le boss
         Instantiate(bossPrefab, spawnPos, Quaternion.identity);
@@ -126,6 +154,7 @@ public class GameManager : Save
 
     void WinGame()
     {
+        //Debug.Log("dataSave.level : " + dataSave.level  + " dataSave.endLevel : " + dataSave.endLevel);
         if(dataSave.level < dataSave.endLevel)
         {
             WriteDataSave();
@@ -158,10 +187,10 @@ public class GameManager : Save
     {
         dataSave.currentHealth = player.GetComponent<PlayerHealth>().GetCurrentHealth();
         dataSave.level += 1;
-        Debug.Log("Sauvegarde du niveau " + dataSave.level);
-        Debug.Log("Tech sélectionnée à sauvegarder : " + panel.getCurrentTechnology()?.Count);
+        //Debug.Log("Sauvegarde du niveau " + dataSave.level);
+        //Debug.Log("Tech sélectionnée à sauvegarder : " + panel.getCurrentTechnology()?.Count);
         dataSave.technology = panel.getCurrentTechnology();
-        Debug.Log("Tech sélectionnée sauvegardée : " + dataSave.technology?.Count);
+        //Debug.Log("Tech sélectionnée sauvegardée : " + dataSave.technology?.Count);
 
         WriteSave(getNumSave(), dataSave);
     }
