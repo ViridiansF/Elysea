@@ -149,14 +149,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 247786929484145961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d99d4c9a42785afb262f2326ca6d0e, type: 3}
+  m_Script: {fileID: 11500000, guid: ed186e6b45c78774da62306343ba3190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anchoring: {fileID: 6656520100118805705}
-  bulletPrefab: {fileID: 4866956070537711061, guid: 73f92d30cba06bef193e9c48c5b2368e, type: 3}
+  bulletPrefab: {fileID: 4866956070537711061, guid: 42bb2f749f8d8e340a32251ee3de37ac, type: 3}
   firingPoint: {fileID: 7589979041245683621}
   fireRate: 0.5
-  damage: 5
+  damage: 1
   pierce: 1
   knockback: 1
   speedBullet: 5
@@ -312,14 +312,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 865681554535366910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d99d4c9a42785afb262f2326ca6d0e, type: 3}
+  m_Script: {fileID: 11500000, guid: ed186e6b45c78774da62306343ba3190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anchoring: {fileID: 6656520100118805705}
-  bulletPrefab: {fileID: 4866956070537711061, guid: 73f92d30cba06bef193e9c48c5b2368e, type: 3}
+  bulletPrefab: {fileID: 4866956070537711061, guid: 42bb2f749f8d8e340a32251ee3de37ac, type: 3}
   firingPoint: {fileID: 272658428446580412}
   fireRate: 0.5
-  damage: 5
+  damage: 1
   pierce: 1
   knockback: 1
   speedBullet: 5
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7883054972590313274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4880bbfdd2e17218eb7bbac2db03e67e, type: 3}
+  m_Script: {fileID: 11500000, guid: f49dca40176d4334eb437d671914ccd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   selectTechnolyPanel: {fileID: 0}
