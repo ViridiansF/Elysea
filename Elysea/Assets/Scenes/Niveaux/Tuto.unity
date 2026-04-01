@@ -805,6 +805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBoat
       objectReference: {fileID: 0}
+    - target: {fileID: 5467575159069244129, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
+      propertyPath: selectTechnolyPanel
+      value: 
+      objectReference: {fileID: 1192415322}
     - target: {fileID: 5857380268572158342, guid: 165574561098fcd47812dd7ab7e87e6a, type: 3}
       propertyPath: maxHealth
       value: 20
@@ -1239,7 +1243,7 @@ PrefabInstance:
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: endScreen
       value: 
-      objectReference: {fileID: 1744890640}
+      objectReference: {fileID: 0}
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: bossPrefab
       value: 
@@ -1398,17 +1402,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4933471019015234432, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
   m_PrefabInstance: {fileID: 16486214}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1744890640 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6109242637353484197, guid: 5a634fbfb37236548b2a2357edaa2b36, type: 3}
-  m_PrefabInstance: {fileID: 16486214}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 736a2be5045eecc4e80b16d35f94fc0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1792247576
 PrefabInstance:
   m_ObjectHideFlags: 0

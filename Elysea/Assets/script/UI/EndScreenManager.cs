@@ -31,4 +31,9 @@ public class EndScreenManager : MonoBehaviour
         SceneManager.LoadScene("Menu Principal");
     }
 
+    public void Next(int levelIndex)
+    {
+        SceneManager.LoadScene("Level" + levelIndex);
+    }
+
 }
