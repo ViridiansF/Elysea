@@ -6,6 +6,7 @@ public class colliderGoodRange : MonoBehaviour
 
     GameObject nearestEnemy = null;
     private List<GameObject> enemiesInRange = new List<GameObject>();
+    [HideInInspector]
     public Transform target;
     private Vector3 currentPosition;
 
