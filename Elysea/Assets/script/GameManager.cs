@@ -187,10 +187,7 @@ public class GameManager : Save
     {
         dataSave.currentHealth = player.GetComponent<PlayerHealth>().GetCurrentHealth();
         dataSave.level += 1;
-        //Debug.Log("Sauvegarde du niveau " + dataSave.level);
-        //Debug.Log("Tech sélectionnée à sauvegarder : " + panel.getCurrentTechnology()?.Count);
         dataSave.technology = panel.getCurrentTechnology();
-        //Debug.Log("Tech sélectionnée sauvegardée : " + dataSave.technology?.Count);
 
         WriteSave(getNumSave(), dataSave);
     }
