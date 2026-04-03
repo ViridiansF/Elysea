@@ -81,7 +81,10 @@ public class TechEffectApplier : MonoBehaviour
         if (tech.GetNuclearWasteBonus() > 0)
         {
             RessourceManager.Instance.AddNuclearWaste(tech.GetNuclearWasteBonus());
-            // Debug.Log($"  → Déchet nucléaire +{tech.GetNuclearWasteBonus()} (à implémenter)");
+            if(tech.GetApplyMalus())
+            {
+                Debug.Log($"  → Effet nucléaire +{tech.GetNuclearWasteBonus()} (à implémenter)");
+            }
         }
 
         // Électricité
@@ -98,7 +101,10 @@ public class TechEffectApplier : MonoBehaviour
         if (tech.GetPollutionBonus() != 0)
         {
             RessourceManager.Instance.AddPollution(tech.GetPollutionBonus());
-            // Debug.Log($"  → Pollution {tech.GetPollutionBonus()} (à implémenter)");
+            if(tech.GetApplyMalus())
+            {
+                Debug.Log($"  → Pollution +{tech.GetPollutionBonus()} (à implémenter)");
+            }
         }
     }
 

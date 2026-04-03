@@ -178,6 +178,8 @@ public class GameManager : Save
         {
             foreach (Tech tech in dataSave.technology)
             {
+                // On active les malus du nucléaire / pollution
+                tech.ActiveMalus();
                 panel.setActualTechnology(tech);
             }
         }

@@ -19,6 +19,9 @@ public class Tech
 
     // Arme à activer si la technologie la déverrouille
     [SerializeField]private string weaponToEnable;
+    // Indique si on applique les malus du nucléaire / pollution
+    // Par défaut, les malus ne sont pas appliqués tant qu'un lvl n'est pas passé.
+    [SerializeField]private bool applyMalus = false;
 
     public Tech(string name, string duplicity, string lockCondition,
                 string health = "", string vision = "", string nuclearWaste = "",
@@ -80,6 +83,8 @@ public class Tech
 
     // Getter pour l'arme à activer
     public string GetWeaponToEnable() => weaponToEnable;
+    public bool GetApplyMalus() => applyMalus;
+    public void ActiveMalus() => applyMalus = true;
 
     public bool HasAnyBonus()
     {
