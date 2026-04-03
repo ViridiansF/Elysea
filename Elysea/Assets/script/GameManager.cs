@@ -77,8 +77,9 @@ public class GameManager : Save
         }
         
         dataSave = GetSave(getNumSave());
-        ReadDataSave();      
-
+        ReadDataSave();   
+        applyEffectNuclearWaste();
+        applyEffectPollution();   
         
         Time.timeScale = 1f;
     }
@@ -178,8 +179,6 @@ public class GameManager : Save
         {
             foreach (Tech tech in dataSave.technology)
             {
-                // On active les malus du nucléaire / pollution
-                tech.ActiveMalus();
                 panel.setActualTechnology(tech);
             }
         }
@@ -204,6 +203,38 @@ public class GameManager : Save
     {
         // Met le jeu en pause
         Time.timeScale = 0f;
+    }
+
+    private void applyEffectPollution()
+    {
+        float pollution = RessourceManager.Instance.GetPollution();
+        switch (pollution)
+        {
+            case >= 75f:
+                Debug.Log("Pollution élevée : effets sévères à implémenter");
+                Debug.Log("Pollution modérée : effets modérés à implémenter");
+                Debug.Log("Pollution faible : effets légers à implémenter");
+                break;
+            case >= 50f:
+                Debug.Log("Pollution modérée : effets modérés à implémenter");
+                Debug.Log("Pollution faible : effets légers à implémenter");
+                break;
+            case >= 25f:
+                Debug.Log("Pollution faible : effets légers à implémenter");
+                break;
+            default:
+               Debug.Log("Pollution très faible : on augmente les dégats des ennemis");
+                break;
+        }
+        // À implémenter : appliquer les effets de la pollution sur le joueur
+        // Par exemple : réduire la santé maximale, réduire la vitesse, etc.
+    }
+
+    private void applyEffectNuclearWaste()
+    {
+        float nuclearWaste = RessourceManager.Instance.GetNuclearWaste();
+        // À implémenter : appliquer les effets des déchets nucléaires sur le joueur
+        // Par exemple : réduire la santé maximale, réduire la vitesse, etc.
     }
 
     public int getActualTime()
