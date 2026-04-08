@@ -31,9 +31,9 @@ public class MenuEchap : MonoBehaviour
             if(!menu.activeSelf && isKeeDown)
             {
                 menu.SetActive(true);
+                menu.GetComponent<EndScreenManager>().Show("Pause");
                 isMenuEchapActive = true;
                 Time.timeScale = 0f;
-                Debug.Log("MenuEchap: menu activeSelf = " + menu.activeSelf);
                 isKeeDown = false;
             }
             if(menu.activeSelf && isMenuEchapActive && isKeeDown)
@@ -41,7 +41,6 @@ public class MenuEchap : MonoBehaviour
                 menu.SetActive(false);
                 isMenuEchapActive = false;
                 Time.timeScale = 1f;
-                Debug.Log("MenuEchap: menu activeSelf = " + menu.activeSelf);
                 isKeeDown = false;
             }
         }

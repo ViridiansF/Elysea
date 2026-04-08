@@ -80,22 +80,25 @@ public class TechEffectApplier : MonoBehaviour
         // Déchet nucléaire
         if (tech.GetNuclearWasteBonus() > 0)
         {
-            // TODO
-            Debug.Log($"  → Déchet nucléaire +{tech.GetNuclearWasteBonus()} (à implémenter)");
+            RessourceManager.Instance.AddNuclearWaste(tech.GetNuclearWasteBonus());
+            // Debug.Log($"  → Déchet nucléaire +{tech.GetNuclearWasteBonus()} (à implémenter)");
         }
 
         // Électricité
         if (tech.GetElectricityBonus() != 0)
         {
-            // TODO
-            Debug.Log($"  → Électricité +{tech.GetElectricityBonus()} (à implémenter)");
+            if(tech.GetElectricityBonus() > 0)
+                RessourceManager.Instance.IncreaseMaxElectricity(tech.GetElectricityBonus());
+            else
+                RessourceManager.Instance.AddElectricity(tech.GetElectricityBonus());
+            // Debug.Log($"  → Électricité +{tech.GetElectricityBonus()} (à implémenter)");
         }
 
         // Pollution
         if (tech.GetPollutionBonus() != 0)
         {
-            // TODO
-            Debug.Log($"  → Pollution {tech.GetPollutionBonus()} (à implémenter)");
+            RessourceManager.Instance.AddPollution(tech.GetPollutionBonus());
+            // Debug.Log($"  → Pollution {tech.GetPollutionBonus()} (à implémenter)");
         }
     }
 

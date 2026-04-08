@@ -14,10 +14,10 @@ public class TextMenuTab : MonoBehaviour
             if (canvas != null){
                 TechPanel = canvas.GetComponentInChildren<SelectTechnologyPanel>(includeInactive: true);
                 if (TechPanel == null)
-                    Debug.LogWarning("ruinCollision: TechPanel non trouvé");
+                    Debug.LogWarning("TextMenuTab: TechPanel non trouvé");
             }
             else
-                Debug.LogWarning("ruinCollision: Canvas non trouvé");
+                Debug.LogWarning("TextMenuTab: Canvas non trouvé");
         }
     }
 
@@ -32,12 +32,12 @@ public class TextMenuTab : MonoBehaviour
             Debug.LogError("TextMeshProUGUI non trouvé sur cet objet !");
             return;
         }
-
-    
+        
         foreach(Tech tech in TechPanel.getCurrentTechnology())
         {
             text += tech.getName() + "\n";
         }
+
         tmp.text=text;
     }
 }

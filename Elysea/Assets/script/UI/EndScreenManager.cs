@@ -1,15 +1,31 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro; 
+using TMPro;
+using UnityEngine.UI;
 
-public class EndScreenManager : MonoBehaviour
+public class EndScreenManager : Save
 {
     public TextMeshProUGUI endText;
+
+    public GameObject replayButton;
+    public GameObject nextButton;
 
     public void Show(string message)
     {
         gameObject.SetActive(true);
         endText.text = message;
+    }
+
+    public void WinConfig()
+    {
+        replayButton.SetActive(false);
+        nextButton.SetActive(true);
+    }
+
+    public void EndConfig()
+    {
+        replayButton.SetActive(false);
+        nextButton.SetActive(false);
     }
 
     public void Rejouer()
@@ -31,8 +47,10 @@ public class EndScreenManager : MonoBehaviour
         SceneManager.LoadScene("Menu Principal");
     }
 
-    public void Next(int levelIndex)
+    public void Next()
     {
+        int levelIndex = GetSave(getNumSave()).level;
+        Debug.Log("Charger le niveau " + levelIndex);
         SceneManager.LoadScene("Level" + levelIndex);
     }
 
