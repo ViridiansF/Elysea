@@ -26,7 +26,6 @@ public class RessourceManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
             FindUIElements();
             UpdateElectricityUI();
             UpdatePollutionUI();
