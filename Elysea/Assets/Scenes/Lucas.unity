@@ -1789,6 +1789,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1942912367593776346, guid: a829a0a063a8a4a4a9bc519b61723bce, type: 3}
+      propertyPath: windStrength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6787649095387739589, guid: a829a0a063a8a4a4a9bc519b61723bce, type: 3}
       propertyPath: m_Name
       value: Wind
