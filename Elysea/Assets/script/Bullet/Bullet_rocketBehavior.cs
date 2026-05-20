@@ -6,6 +6,7 @@ public class Bullet_rocketBehavior : bulletBehavior
     [SerializeField] private GameObject ExplosionPrefab;
     [SerializeField] public bool isNuklear = true;
     private float explosionRadius = 5f;
+    private float last;
 
     // protected override void Start()
     // {
@@ -22,9 +23,11 @@ public class Bullet_rocketBehavior : bulletBehavior
         Invoke("Explode", lifeTime);
         if(!isNuklear) {
             explosionRadius *= 0.25f;
+            last = 0.5f;
         } else
         {
             explosionRadius *= 1f;
+            last = 3f;
         }
     }
 
@@ -47,5 +50,7 @@ public class Bullet_rocketBehavior : bulletBehavior
         // CancelInvoke();
         GameObject explosion = Instantiate(ExplosionPrefab, transform.position, transform.rotation);
         explosion.transform.localScale = new Vector3(explosionRadius, explosionRadius, 1f);
+        explosion.GetComponent<DamageZoneBehavior>().lifeTime = last;
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA : " + explosion.GetComponent<DamageZoneBehavior>().lifeTime);
     }
 }

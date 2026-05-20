@@ -42,6 +42,7 @@ public class Tech
         switch (nameTech)
         {
             case "Lance-Roquette":
+            case "Lance-Roquette Nucléaire":
                 weaponToEnable = "LanceRocket";
                 break;
             case "Radar": // Test
