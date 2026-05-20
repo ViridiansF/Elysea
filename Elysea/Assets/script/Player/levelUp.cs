@@ -25,6 +25,11 @@ public class levelUp : MonoBehaviour
 
     void Update()
     {
+        updateTechnology();
+    }
+
+    public void updateTechnology()
+    {
         if (selectTechnolyPanel == null)
             return;
 
