@@ -1,0 +1,43 @@
+Id,Catégories,Nom,Santé,CH vision,Déchet nucléaire,Degat,Elec,Vitesse vent,Vitesse,Pollutions,Multiplicité,Conditions apparition,Polluant,Vert,Optionel,,Description,x
+1,Base,Voile,,,,,,20,,,,,,X,,,,x
+2,Base,Baliste,,,,2,,,,,,,,X,Todo,,De base,x
+3,Energies,Centrale a charbon,,,,,10,,,10,X,,X,,,,,x
+4,Energies,Centrale a pétrole,,,,,10,,,5,X,,X,,,,,x
+5,Energies,Centrale nucléaire,,,10,,15,,,,X,Lab. Nucléaire,,,,,,x
+6,Energies,Panneau,,,,,10,,,,X,,,X,Todo,,Seulement jour,x
+7,Energies,Eolienne marine,,,,,10,,,,X,,,X,Todo,,Seulement immobile,x
+8,Energies,Batterie,,,,,,,,5,,,X,,Todo,,70% élec verte Seuil mini d'Elec,x
+9,Energies,Stock déchet nucleaire,,,-10,,,,,,X,Lab. Nucléaire,,,,,,x
+10,Matériaux,Béton,200,,,,,,-5,10,,,X,,,,,x
+11,Matériaux,Voile Polymère synthétique,,,,,,10,,5,,,X,,,,,x
+12,Matériaux,Voile Polymère naturel,,,,,,10,,,,,,X,,,,x
+13,Matériaux,Caoutchouc - arbre,,,,,,,,,,,,X,X,,Permet de débloquer d'autres taches ?,x
+14,Matériaux,Caoutchouc - pétrole,,,,,,,,,,,X,,X,,,x
+15,Matériaux,Acier,100,,,,,,,5,,,X,,,,,x
+16,Matériaux,Bois,,,,,,,,,,,,X,X,,+ 10 pop,x
+17,Matériaux,Aluminium,,,,,,,10,5,,,X,,,,,x
+18,Laboratoire,Lab. Pétrochimique,,,,,,,,,,,,,Todo,,+1 choix polluants (50%),x
+19,Laboratoire,BioLab,,,,,,,,,,,,X,Todo,,+1 choix Tech Verte (50%),x
+20,Laboratoire,Lab. Nucléaire,,,,,,,,,,,,,,,Débloque tech nucléaire,x
+21,Moteur,Moteur a combustion,,,,,,,10,5,X,,X,,,,,x
+22,Moteur,Moteur électrique,,,,,-5,,10,,X,,,X,,,,x
+23,Moteur,Moteur nucléaire,,,10,,,,15,,X,Lab. Nucléaire,,,,,,x
+24,Arme,Lance flamme,,,,10,,,,10,,,X,,Todo,,2 cote deg zone,x
+25,Arme ,Canon,,,,5,,,,,,,,X,Todo,,2 cote deg/coup ,x
+26,Arme,Mittrailleuse,,,,2,,,,,,,,X,Todo,,2 cote deg/coup  (rapide),x
+27,Arme,Mitrailleuse à balle enrichie,,,,5,,,,2,,Lab. Nucléaire,X,,Todo,,2 cote deg/coup  (rapide),x
+28,Arme,Laser,,,,50,-20,,,,,,,X,Todo,,-20 elec (5 sec apres)| fase (dirigeable) 5sec recharge| 1 rayon 50 deg,x
+29,Arme,Canon lourd,,,,100,,,,2,,,X,,Todo,,fase (dirigeable) 5sec recharge| 1 cible 100 deg,x
+30,Arme,Mine,,,,,,,,,,,,X,Todo,,Séme des mines a l'arrière,x
+31,Arme,Lance-Roquette,,,,20,,,,,,,,X,,,1torpille/2sec 20dégat plus proche,x
+32,Arme ,Lance-Roquette Nucléaire,,,,20,,,,5,,Lab. Nucléaire,X,,,,1torpille/2sec 20dégat plus proche + zone 2s,x
+33,Arme ,Eperons,,,,30,,,,,,,,X,Todo,,Dégat choque de fasse (au dela vitesse),x
+34,Explorations,Radar,,150,,,-5,,,,,,,X,,,,x
+35,Explorations ,Vigi,,125,,,,,,,,,,X,,,,x
+36,Explorations,Sonar,,,,,,,,,,,,X,X,,visibilité ds ls noir,x
+37,Bouclier,Interception (missile),,,,,,,,,X,,,X,Todo,,Nombre d'attaque Cac évité 5,x
+38,Bouclier,Nuage de drone,,,,,,,,,X,,,X,Todo,,Nombre d'attaque Distance évité 5,x
+39,Algorithme,Opti consommation élec,,,,,-2,,,,,,,X,Todo,,+25% prod élec,x
+40,Algorithme,Opti du rechargement,,,,,-2,,,,X,,,X,Todo,,+25% vitesse de tir,x
+41,Arme,Mickael,,,,1000,,,,,,Lab. Nucléaire,,X,Todo,,aura de Mickael,x
+42,Pollutions,Captation du carbonne,,,,,,,,-5,X,,,X,,,,x

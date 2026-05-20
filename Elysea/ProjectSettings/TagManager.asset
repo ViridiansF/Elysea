@@ -5,8 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - Bullet
+  - Bullet Enemy
   - Weather
+  - Bullet
+  - HealthBar
+  - ChildBoss
+  - Laser Enemy
+  - DamageZone
   layers:
   - Default
   - TransparentFX
