@@ -1,5 +1,8 @@
 # Unity - Git LFS
 
+# Scènes
+*.unity filter=lfs diff=lfs merge=lfs -text
+
 # Images
 *.psd filter=lfs diff=lfs merge=lfs -text
 *.tga filter=lfs diff=lfs merge=lfs -text
