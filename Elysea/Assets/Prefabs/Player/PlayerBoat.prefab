@@ -155,7 +155,7 @@ MonoBehaviour:
   anchoring: {fileID: 6656520100118805705}
   bulletPrefab: {fileID: 4866956070537711061, guid: 42bb2f749f8d8e340a32251ee3de37ac, type: 3}
   firingPoint: {fileID: 7589979041245683621}
-  fireRate: 0.5
+  fireRate: 1
   damage: 1
   pierce: 1
   knockback: 1
@@ -318,7 +318,7 @@ MonoBehaviour:
   anchoring: {fileID: 6656520100118805705}
   bulletPrefab: {fileID: 4866956070537711061, guid: 42bb2f749f8d8e340a32251ee3de37ac, type: 3}
   firingPoint: {fileID: 272658428446580412}
-  fireRate: 0.5
+  fireRate: 1
   damage: 1
   pierce: 1
   knockback: 1
@@ -461,7 +461,7 @@ MonoBehaviour:
   anchoring: {fileID: 3183315161416117698}
   bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
   firingPoint: {fileID: 2278357348228049452}
-  fireRate: 0.1
+  fireRate: 0.5
   damage: 1
   pierce: 1
   knockback: 1
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 220
-  thrust: 12
+  thrust: 10
   maxSpeed: 6
   waterDrag: 1.6
   minAlignmentToMove: 0.35

@@ -185,7 +185,7 @@ MonoBehaviour:
   anchoring: {fileID: 9062107804414472176}
   bulletPrefab: {fileID: 337602355183508591, guid: 9038eba5115dc804d925bc6f271a71d9, type: 3}
   firingPoint: {fileID: 6812668024036872380}
-  fireRate: 0.48
+  fireRate: 0.6
   damage: 1
   speed: 5
   hp: 3
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageContact: 3
-  pv: 10
+  pv: 20
   enableContactDeath: 0
   enableKnockbackContact: 1
   enableKnockbackBullet: 1
