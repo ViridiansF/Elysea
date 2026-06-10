@@ -119,7 +119,28 @@ public class TechEffectApplier : MonoBehaviour
 
         // Chercher le GameObject enfant avec le nom spécifié
         Transform weaponTransform = playerTransform.Find(weaponName);
-        
+
+
+        //si lance rocket
+        if(weaponName == "LanceRocket" || weaponName == "LanceRocketNuke") {
+            Transform normal = weaponTransform.Find("Normal");
+
+            if (normal != null)
+            {
+                if(normal.gameObject.activeSelf) {
+                    Transform nuklear = weaponTransform.Find("Nuklear");
+                    Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB : " + weaponTransform);
+                    if(nuklear != null) {
+                        weaponTransform = nuklear;
+                        normal.gameObject.SetActive(false);
+                    }
+                } else {
+                    weaponTransform = normal;
+                }
+            }
+        }
+
+        //active une arme
         if (weaponTransform != null)
         {
             weaponTransform.gameObject.SetActive(true);
