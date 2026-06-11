@@ -230,7 +230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageContact: 15
-  pv: 15
+  pv: 10
+  maxPv: 3
   enableContactDeath: 1
   enableKnockbackContact: 1
   enableKnockbackBullet: 1
