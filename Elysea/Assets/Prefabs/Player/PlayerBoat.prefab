@@ -462,10 +462,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 47165966874807397, guid: adf0e7eeb3bf18b41a4424e4d654c732, type: 3}
   firingPoint: {fileID: 2278357348228049452}
   fireRate: 0.5
-  damage: 1
+  damage: 5
   pierce: 1
   knockback: 1
-  speedBullet: 5
+  speedBullet: 7
   lifeTime: 5
   shiftSummoning: 0
 --- !u!1 &3183315161416117698
@@ -824,8 +824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abee2613fb767c4f852c5da1172d4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 100
+  currentHealth: 100
 --- !u!114 &5467575159069244129
 MonoBehaviour:
   m_ObjectHideFlags: 0
