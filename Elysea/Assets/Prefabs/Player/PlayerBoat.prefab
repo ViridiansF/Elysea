@@ -472,8 +472,8 @@ MonoBehaviour:
   speedBullet: 5
   lifeTime: 5
   shiftSummoning: 0
-  audioSource: {fileID: 0}
-  shootSound: {fileID: 0}
+  audioSource: {fileID: 8624903033904571152}
+  shootSound: {fileID: 8300000, guid: 08df0dcc72748cbe08538000cf445abb, type: 3}
 --- !u!1 &3183315161416117698
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +821,7 @@ MonoBehaviour:
   rb: {fileID: 1594526865040788316}
   audioSource: {fileID: 8624903033904571152}
   sound: {fileID: 8300000, guid: c520eda0c0f092415b5d8c23a3b91a55, type: 3}
+  stepDelay: 0.5
 --- !u!114 &739667614947823253
 MonoBehaviour:
   m_ObjectHideFlags: 0
