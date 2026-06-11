@@ -76,7 +76,7 @@ MonoBehaviour:
   target: {fileID: 0}
   rotationSpeed: 0.0025
   knockbackDuration: 0.15
-  speed: 2
+  speed: 3
 --- !u!1 &6685260474246484062
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9076cd35fb0aaf449dcf8b2efb5cad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageContact: 3
-  pv: 3
+  damageContact: 15
+  pv: 15
   enableContactDeath: 1
   enableKnockbackContact: 1
   enableKnockbackBullet: 1

@@ -28,6 +28,8 @@ public class GameManager : Save
     public EndScreenManager endScreen;
     private SaveData dataSave;
     private SelectTechnologyPanel panel;
+    
+    private levelUp levelUpScript;
 
 
     public AudioSource audioSource;
@@ -72,6 +74,13 @@ public class GameManager : Save
 
             if (panel == null)
                 Debug.LogWarning("GameManager: ChoicePanel non trouvé");
+        }
+
+        if (levelUpScript == null)
+        {
+            levelUpScript = FindAnyObjectByType<levelUp>();
+            if (levelUpScript == null)
+                Debug.LogWarning("GameManager: levelUp script non trouvé dans la scène");
         }
 
         if (sceneName == "Tuto")
@@ -186,7 +195,9 @@ public class GameManager : Save
         {
             foreach (Tech tech in dataSave.technology)
             {
+                // Debug.Log("Tech chargée : " + tech.getName());
                 panel.setActualTechnology(tech);
+                levelUpScript.updateTechnology(); // Forcer la mise à jour des technologies appliquées
             }
         }
     }
@@ -289,6 +300,7 @@ public class GameManager : Save
             {
                 return false;
             }
+            // Debug.Log($"Tentative d'augmentation des PV pour {target.name}");
 
             colisionEnemy enemyCollision = target.GetComponentInChildren<colisionEnemy>(true);
             if (enemyCollision == null)
@@ -298,6 +310,7 @@ public class GameManager : Save
 
             int oldPv = enemyCollision.pv;
             enemyCollision.pv = Mathf.Max(1, Mathf.CeilToInt(oldPv * multiplier));
+            enemyCollision.maxPv = Mathf.Max(1, Mathf.CeilToInt(enemyCollision.maxPv * multiplier));
             return true;
         }
 
@@ -443,19 +456,20 @@ public class GameManager : Save
     /// </summary>
     public int getPollutionLevel(float pollutionValue)
     {
+        // Debug.Log($"Calcul du niveau de pollution pour une valeur de {pollutionValue}");
         return pollutionValue switch
         {
             >= 100 => 10,
-            > 96 => 10,
-            > 89 => 9,
-            > 82 => 8,
-            > 75 => 7,
-            > 68 => 6,
-            > 60 => 5,
-            > 50 => 4,
-            > 40 => 3,
-            > 28 => 2,
-            > 15 => 1,
+            >= 96 => 10,
+            >= 89 => 9,
+            >= 82 => 8,
+            >= 75 => 7,
+            >= 68 => 6,
+            >= 60 => 5,
+            >= 50 => 4,
+            >= 40 => 3,
+            >= 28 => 2,
+            >= 15 => 1,
             _ => 0
         };
     }

@@ -8,6 +8,7 @@ public class TechEffectApplier : MonoBehaviour
     private List<shootBullet> shootSystems;
     private Transform playerTransform;
     private GameManager gameManager;
+    private Camera playerCamera;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class TechEffectApplier : MonoBehaviour
         playerHealth = FindAnyObjectByType<PlayerHealth>();
         boatMovement = FindAnyObjectByType<movBateauPlayer>();
         gameManager = FindAnyObjectByType<GameManager>();
+        playerCamera = Camera.main;
         playerTransform = boatMovement?.transform;
         
         // Trouver tous les systèmes de tir du joueur
@@ -73,8 +75,16 @@ public class TechEffectApplier : MonoBehaviour
         // Portée de vision
         if (tech.GetVisionBonus() > 0)
         {
-            // TODO : Portée de tir ou champ de vision ?
-            Debug.Log($"  → Vision +{tech.GetVisionBonus()} (à implémenter)");
+            if (playerCamera != null)
+            {
+                float bonusPercentage = tech.GetVisionBonus();
+                playerCamera.orthographicSize *= bonusPercentage / 100f;
+                Debug.Log($"  → Vision +{bonusPercentage}% (Nouvelle taille caméra: {playerCamera.orthographicSize})");
+            }
+            else
+            {
+                Debug.LogWarning("Caméra principale non trouvée!");
+            }
         }
 
         // Déchet nucléaire
@@ -109,7 +119,28 @@ public class TechEffectApplier : MonoBehaviour
 
         // Chercher le GameObject enfant avec le nom spécifié
         Transform weaponTransform = playerTransform.Find(weaponName);
-        
+
+
+        //si lance rocket
+        if(weaponName == "LanceRocket" || weaponName == "LanceRocketNuke") {
+            Transform normal = weaponTransform.Find("Normal");
+
+            if (normal != null)
+            {
+                if(normal.gameObject.activeSelf) {
+                    Transform nuklear = weaponTransform.Find("Nuklear");
+                    Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB : " + weaponTransform);
+                    if(nuklear != null) {
+                        weaponTransform = nuklear;
+                        normal.gameObject.SetActive(false);
+                    }
+                } else {
+                    weaponTransform = normal;
+                }
+            }
+        }
+
+        //active une arme
         if (weaponTransform != null)
         {
             weaponTransform.gameObject.SetActive(true);

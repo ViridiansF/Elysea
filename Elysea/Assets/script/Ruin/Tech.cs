@@ -41,8 +41,9 @@ public class Tech
 
         switch (nameTech)
         {
-            case "Torpile autogidué":
-                weaponToEnable = "Torpile autoguidée";
+            case "Lance-Roquette":
+            case "Lance-Roquette Nucléaire":
+                weaponToEnable = "LanceRocket";
                 break;
             case "Radar": // Test
                 weaponToEnable = "SecondAnchoring";
