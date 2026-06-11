@@ -72,5 +72,6 @@ AddressableAssetsData/*/catalog_*_bundle.dat
 ## Temporary generated files
 *.unitypackage
 Elysea/UserSettings/Layouts/default-6000.dwlts
-
+Elysea/UserSettings/EditorUserSettings.asset
 default-6000.dwlt
+Elysea/UserSettings/Layouts/default-6000.dwlt
