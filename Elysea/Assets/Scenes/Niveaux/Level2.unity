@@ -1230,7 +1230,7 @@ PrefabInstance:
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: bossPrefab
       value: 
-      objectReference: {fileID: 337602355183508591, guid: a622f778ab3dab1439f2da30ddad5e09, type: 3}
+      objectReference: {fileID: 337602355183508591, guid: 83dc60caf9954c2468ba04e019a5273b, type: 3}
     - target: {fileID: 7967207353767803617, guid: 95d035801a2b7194789bc18efabee09b, type: 3}
       propertyPath: enemyPrefab
       value: 
