@@ -4,18 +4,19 @@ public class colisionEnemy : MonoBehaviour
 {
     public int damageContact = 3;
     public int pv = 3;
+    public int maxPv = 3;
     public bool enableContactDeath = true;
     public bool enableKnockbackContact = true;
     public bool enableKnockbackBullet = true;
     private float knockbackForceContact = 5f;
     private float knockbackForceBullet = 5f;
-
+    HealthBarBoss healthBarBoss;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        healthBarBoss = GetComponentInParent<HealthBarBoss>();
     }
 
     // Update is called once per frame
@@ -56,6 +57,11 @@ public class colisionEnemy : MonoBehaviour
         if (other.CompareTag("Bullet") || other.CompareTag("DamageZone"))
         {
             pv -= other.GetComponent<bulletBehavior>().damage;
+            if (healthBarBoss != null)
+            {
+                Debug.Log("____________________Mise à jour de la barre de vie du boss : " + pv + "/" + maxPv);
+                healthBarBoss.UpdateBar(maxPv, pv);
+            }
             Debug.Log("PV ennemi : " + pv);
             if (pv <= 0)
             {

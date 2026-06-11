@@ -304,6 +304,7 @@ public class GameManager : Save
 
             int oldPv = enemyCollision.pv;
             enemyCollision.pv = Mathf.Max(1, Mathf.CeilToInt(oldPv * multiplier));
+            enemyCollision.maxPv = Mathf.Max(1, Mathf.CeilToInt(enemyCollision.maxPv * multiplier));
             return true;
         }
 
