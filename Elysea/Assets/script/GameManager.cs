@@ -120,47 +120,74 @@ public class GameManager : Save
         }
     }
 
+    bool IsValidSpawn(Vector3 pos)
+    {
+        float checkRadius = 1f; // ajuste selon la taille de ton ennemi
+        return Physics2D.OverlapCircle(pos, checkRadius) == null;
+    }
+
     void SpawnEnemies()
     {
+        // ENEMIES TYPE 1
         for (int i = 0; i < enemiesToSpawn1; i++)
         {
-            // Génération aléatoire
-            float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
-            float distance = Random.Range(spawnRadiusMin1, spawnRadiusMax1);
+            Vector3 spawnPos = Vector3.zero;
+            int tries = 0;
 
-            // Calculer la position autour du joueur
-            Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
+            do
+            {
+                float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+                float distance = Random.Range(spawnRadiusMin1, spawnRadiusMax1);
 
-            // Instancier l'ennemi
+                spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
+
+                tries++;
+
+            } while (!IsValidSpawn(spawnPos) && tries < 10);
+
             Instantiate(enemyPrefab1, spawnPos, Quaternion.identity);
         }
 
+        // ENEMIES TYPE 2
         for (int i = 0; i < enemiesToSpawn2; i++)
         {
-            // Génération aléatoire
-            float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
-            float distance = Random.Range(spawnRadiusMin2, spawnRadiusMax2);
+            Vector3 spawnPos = Vector3.zero;
+            int tries = 0;
 
-            // Calculer la position autour du joueur
-            Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
+            do
+            {
+                float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+                float distance = Random.Range(spawnRadiusMin2, spawnRadiusMax2);
 
-            // Instancier l'ennemi
+                spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
+
+                tries++;
+
+            } while (!IsValidSpawn(spawnPos) && tries < 10);
+
             Instantiate(enemyPrefab2, spawnPos, Quaternion.identity);
         }
-
     }
     void SpawnBoss()
     {
+        Vector3 spawnPos = Vector3.zero;
+        int tries = 0;
 
-        // Générer un angle aléatoire
-        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+        do
+        {
+            float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
 
-        // Calculer la position autour du joueur
-        Vector3 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadiusBoss;
+            spawnPos = player.position + new Vector3(
+                Mathf.Cos(angle),
+                Mathf.Sin(angle),
+                0
+            ) * spawnRadiusBoss;
 
-        // Instancier le boss
+            tries++;
+
+        } while (!IsValidSpawn(spawnPos) && tries < 10);
+
         Instantiate(bossPrefab, spawnPos, Quaternion.identity);
-
     }
 
     void WinGame()
