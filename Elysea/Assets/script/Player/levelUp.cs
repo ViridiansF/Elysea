@@ -13,10 +13,19 @@ public class levelUp : MonoBehaviour
 
     void Start()
     {
+
         if (selectTechnolyPanel == null)
         {
-            Debug.LogError("levelUp: SelectTechnologyPanel n'est pas assignée dans l'inspecteur!");
-            return;
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
+            {
+                Transform choicePanelTransform = canvas.transform.Find("ChoicePanel");
+                if (choicePanelTransform != null)
+                    selectTechnolyPanel = choicePanelTransform.GetComponent<SelectTechnologyPanel>();
+            }
+
+            if (selectTechnolyPanel == null)
+                Debug.LogWarning("GameManager: ChoicePanel non trouvé");
         }
 
         effectApplier = FindAnyObjectByType<TechEffectApplier>();

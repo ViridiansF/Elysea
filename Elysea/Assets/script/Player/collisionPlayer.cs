@@ -42,7 +42,7 @@ public class CollisionPlayer : MonoBehaviour
         {
             damageTimer += Time.deltaTime;
 
-            if (damageTimer >= 1f)
+            if (damageTimer >= 0.2f)
             {
                 playerHealth.takeDamage(continuousDamage);
                 Debug.Log("Dégâts continus reçus : " + continuousDamage);
