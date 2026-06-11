@@ -80,7 +80,13 @@ public class movBateauPlayer : MonoBehaviour
 
     public void IncreaseMaxSpeed(float amount)
     {
+        float oldMaxSpeed = maxSpeed;
         maxSpeed += amount;
-    }
 
+        // Calculer le ratio d'augmentation
+        float ratio = maxSpeed / oldMaxSpeed;
+
+        // Ajuster l'accélération en fonction du nouveau maxSpeed
+        thrust *= ratio;
+    }
 }
