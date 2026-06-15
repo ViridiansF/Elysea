@@ -69,7 +69,7 @@ public class colisionEnemy : MonoBehaviour
             Debug.Log("PV ennemi : " + pv);
             if (pv <= 0)
             {
-                AudioSource.PlayClipAtPoint(enemyDeathSound, transform.position);
+                // AudioSource.PlayClipAtPoint(enemyDeathSound, transform.position);
                 Debug.Log("Ennemi détruit");
                 death();
             }
