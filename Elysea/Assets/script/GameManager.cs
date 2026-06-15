@@ -127,20 +127,17 @@ public class GameManager : Save
 
     bool IsValidSpawn(Vector3 pos)
     {
-        float radius = 0.5f;
-
-        Collider2D[] hits = Physics2D.OverlapCircleAll(pos, radius);
-
-        foreach (Collider2D hit in hits)
+        float radius = 5f;  // Augmenté pour plus de sécurité
+        int wallLayer = LayerMask.GetMask("wallLayer");
+        
+        Collider2D[] hits = Physics2D.OverlapCircleAll(pos, radius, wallLayer);
+        
+        if (hits.Length > 0)
         {
-            if (hit.CompareTag("wallLayer"))
-            {
-                Debug.Log("Mur détecté : " + hit.name);
-                return false;
-            }
+            Debug.LogWarning($"SPAWN INVALIDE! {hits.Length} murs à {pos.ToString("F2")}");
         }
-
-        return true;
+        
+        return hits.Length == 0;
     }
 
 
@@ -151,6 +148,7 @@ public class GameManager : Save
         {
             Vector3 spawnPos = Vector3.zero;
             int tries = 0;
+            bool isValid = false;
 
             do
             {
@@ -158,13 +156,15 @@ public class GameManager : Save
                 float distance = Random.Range(spawnRadiusMin1, spawnRadiusMax1);
 
                 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
-
+                isValid = IsValidSpawn(spawnPos);
                 tries++;
 
-            } while (!IsValidSpawn(spawnPos) && tries < 10);
+            } while (!isValid && tries < 20);
 
-            Instantiate(enemyPrefab1, spawnPos, Quaternion.identity);
-
+            if (isValid)
+            {
+                Instantiate(enemyPrefab1, spawnPos, Quaternion.identity);
+            }
         }
 
         // ENEMIES TYPE 2
@@ -172,6 +172,7 @@ public class GameManager : Save
         {
             Vector3 spawnPos = Vector3.zero;
             int tries = 0;
+            bool isValid = false;
 
             do
             {
@@ -179,18 +180,22 @@ public class GameManager : Save
                 float distance = Random.Range(spawnRadiusMin2, spawnRadiusMax2);
 
                 spawnPos = player.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * distance;
-
+                isValid = IsValidSpawn(spawnPos);
                 tries++;
 
-            } while (!IsValidSpawn(spawnPos) && tries < 10);
+            } while (!isValid && tries < 20);
 
-            Instantiate(enemyPrefab2, spawnPos, Quaternion.identity);
+            if (isValid)
+            {
+                Instantiate(enemyPrefab2, spawnPos, Quaternion.identity);
+            }
         }
     }
     void SpawnBoss()
     {
         Vector3 spawnPos = Vector3.zero;
         int tries = 0;
+        bool isValid = false;
 
         do
         {
@@ -202,11 +207,15 @@ public class GameManager : Save
                 0
             ) * spawnRadiusBoss;
 
+            isValid = IsValidSpawn(spawnPos);
             tries++;
 
-        } while (!IsValidSpawn(spawnPos) && tries < 10);
+        } while (!isValid && tries < 20);
 
-        Instantiate(bossPrefab, spawnPos, Quaternion.identity);
+        if (isValid)
+        {
+            Instantiate(bossPrefab, spawnPos, Quaternion.identity);
+        }
     }
 
     void WinGame()
