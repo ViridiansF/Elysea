@@ -12,11 +12,12 @@ TagManager:
   - ChildBoss
   - Laser Enemy
   - DamageZone
+  - wallLayer
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - wallLayer
   - Water
   - UI
   - 
