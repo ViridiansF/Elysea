@@ -122,9 +122,22 @@ public class GameManager : Save
 
     bool IsValidSpawn(Vector3 pos)
     {
-        float checkRadius = 1f; // ajuste selon la taille de ton ennemi
-        return Physics2D.OverlapCircle(pos, checkRadius) == null;
+        float radius = 0.5f;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(pos, radius);
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.CompareTag("wallLayer"))
+            {
+                Debug.Log("Mur détecté : " + hit.name);
+                return false;
+            }
+        }
+
+        return true;
     }
+
 
     void SpawnEnemies()
     {

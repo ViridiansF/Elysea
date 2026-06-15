@@ -51,6 +51,6 @@ public class Bullet_rocketBehavior : bulletBehavior
         GameObject explosion = Instantiate(ExplosionPrefab, transform.position, transform.rotation);
         explosion.transform.localScale = new Vector3(explosionRadius, explosionRadius, 1f);
         explosion.GetComponent<DamageZoneBehavior>().lifeTime = last;
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA : " + explosion.GetComponent<DamageZoneBehavior>().lifeTime);
+        //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA : " + explosion.GetComponent<DamageZoneBehavior>().lifeTime);
     }
 }

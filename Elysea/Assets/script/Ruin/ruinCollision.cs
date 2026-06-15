@@ -38,7 +38,7 @@ public class ruinCollision : MonoBehaviour
     {
         Debug.Log("1 clicked: " + choicePanel.getRandomTechnology()[0].getName());
         choicePanel.setActualTechnology(choicePanel.getRandomTechnology()[0]);
-        Destroy(transform.root.gameObject);
+        Destroy(transform.gameObject);
         choicePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
@@ -47,7 +47,7 @@ public class ruinCollision : MonoBehaviour
     {
         Debug.Log("2 clicked: " + choicePanel.getRandomTechnology()[1].getName());
         choicePanel.setActualTechnology(choicePanel.getRandomTechnology()[1]);
-        Destroy(transform.root.gameObject);
+        Destroy(transform.gameObject);
         choicePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
@@ -56,7 +56,7 @@ public class ruinCollision : MonoBehaviour
     {
         Debug.Log("3 clicked: " + choicePanel.getRandomTechnology()[2].getName());
         choicePanel.setActualTechnology(choicePanel.getRandomTechnology()[2]);
-        Destroy(transform.root.gameObject);
+        Destroy(transform.gameObject);
         choicePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
