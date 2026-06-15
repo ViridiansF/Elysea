@@ -13,6 +13,9 @@ public abstract class shootBullet : shoot
     [SerializeField] public float lifeTime = 5f;
     [SerializeField] public float shiftSummoning = 0f;
 
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip shootSound;
+
     void Start()
     {
         
@@ -35,6 +38,8 @@ public abstract class shootBullet : shoot
         // Instanciation de la balle
         GameObject bullet = Instantiate(bulletPrefab, spawnPosition, firingPoint.rotation);
 
+        if (audioSource != null && shootSound != null)
+            audioSource.PlayOneShot(shootSound);
 
         bulletBehavior bulletScript = bullet.GetComponent<bulletBehavior>();
         bulletScript.damage = damage;

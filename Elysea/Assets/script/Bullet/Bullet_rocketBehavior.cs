@@ -8,6 +8,9 @@ public class Bullet_rocketBehavior : bulletBehavior
     private float explosionRadius = 5f;
     private float last;
 
+    public AudioClip shootSound;
+    public AudioClip explosionSound;
+
     // protected override void Start()
     // {
     //     base.Start();
@@ -20,7 +23,9 @@ public class Bullet_rocketBehavior : bulletBehavior
     protected override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
         Invoke("Explode", lifeTime);
+        AudioSource.PlayClipAtPoint(shootSound, transform.position);
         if(!isNuklear) {
             explosionRadius *= 0.25f;
             last = 0.5f;
@@ -42,6 +47,7 @@ public class Bullet_rocketBehavior : bulletBehavior
     {
         if (other.CompareTag("Enemy"))
         {
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
             Explode();
         }
     }

@@ -7,6 +7,10 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     HealthBar healthBar;
 
+    public int gruid;
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip sound;
+
     void Awake()
     {
         healthBar = GetComponentInChildren<HealthBar>();
@@ -23,6 +27,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void takeDamage(float damage)
     {
+        if (audioSource != null && sound != null)
+            audioSource.PlayOneShot(sound);
+
         currentHealth -= damage;
         if (currentHealth <= 0)
         {

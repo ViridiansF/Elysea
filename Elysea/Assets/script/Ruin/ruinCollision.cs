@@ -11,6 +11,11 @@ public class ruinCollision : MonoBehaviour
     [HideInInspector]
     private GameObject player;
 
+
+    public AudioSource audioSource;
+    public AudioClip ruinSound;
+
+
     private void Start()
     {
         if (choicePanel == null){
@@ -66,6 +71,7 @@ public class ruinCollision : MonoBehaviour
         //Debug.Log(other.name);
         if(other.CompareTag("Player"))
         {
+            audioSource.PlayOneShot(ruinSound);
             choicePanel.Button1.onClick.AddListener(Choice1Clicked);
             choicePanel.Button2.onClick.AddListener(Choice2Clicked);
             choicePanel.Button3.onClick.AddListener(Choice3Clicked);

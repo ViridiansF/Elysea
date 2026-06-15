@@ -9,11 +9,13 @@ public class SaveButton : Save
     public TextMeshProUGUI buttonSave2;
     public TextMeshProUGUI buttonSave3;
 
+    public AudioSource audioSource;
+    public AudioClip validateSound;
+    public AudioClip backSound;
     
 
     public void Start()
     {
-        
         save = GetSave(1);
         if (save == null)
         {
@@ -49,13 +51,24 @@ public class SaveButton : Save
     public void Menu()
     {
         SceneManager.LoadScene("Menu Principal");
+        PlayBack();
     }
 
     public new void DeleteSave(int numSave)
     {
+        PlayBack();
         base.DeleteSave(numSave);
         Start();
     }
 
+    public void PlayValidate()
+    {
+        audioSource.PlayOneShot(validateSound);
+    }
+
+    public void PlayBack()
+    {
+        // audioSource.PlayOneShot(backSound);
+    }
 
 }

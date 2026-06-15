@@ -31,6 +31,10 @@ public class GameManager : Save
     
     private levelUp levelUpScript;
 
+
+    public AudioSource audioSource;
+    public AudioClip newWaveSound;
+
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
@@ -101,6 +105,7 @@ public class GameManager : Save
 
         if (tempsPasse >= explorationTime && isExplorationPhase)
         {
+            audioSource.PlayOneShot(newWaveSound);
             isExplorationPhase = false;
             isWavePhase = true;
             tempsPasse = 0;
@@ -159,6 +164,7 @@ public class GameManager : Save
             } while (!IsValidSpawn(spawnPos) && tries < 10);
 
             Instantiate(enemyPrefab1, spawnPos, Quaternion.identity);
+
         }
 
         // ENEMIES TYPE 2

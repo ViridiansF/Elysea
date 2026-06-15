@@ -186,3 +186,6 @@ MonoBehaviour:
   lifeTime: 3
   ExplosionPrefab: {fileID: 7399040815327299784, guid: 9865ad725dbb19b4494d9b309aec4dda, type: 3}
   isNuklear: 1
+  audioSource: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: cd5de57fa4464877cbfa9be983e46552, type: 3}
+  explosionSound: {fileID: 8300000, guid: b7f87a42199155078ac92c326a13274b, type: 3}

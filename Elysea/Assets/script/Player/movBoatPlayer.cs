@@ -17,6 +17,11 @@ public class movBateauPlayer : MonoBehaviour
     public void AddWind(Vector2 windForce) => windSum = windForce;
     public void RemoveWind() => windSum = Vector2.zero;
 
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip sound;
+    public float stepDelay = 0.5f;
+    private float stepTimer;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +46,15 @@ public class movBateauPlayer : MonoBehaviour
         // Moteur/rotation seulement si input
         if (inputDir.sqrMagnitude >= 0.01f)
         {
+            stepTimer -= Time.fixedDeltaTime;
+            if (stepTimer <= 0f)
+            {
+                if (audioSource != null && sound != null)
+                    audioSource.PlayOneShot(sound);
+                    stepTimer = stepDelay;
+            }
+
+
             if (inputDir.sqrMagnitude > 1f) inputDir.Normalize();
 
             float desiredAngle = Mathf.Atan2(inputDir.y, inputDir.x) * Mathf.Rad2Deg - 90f;

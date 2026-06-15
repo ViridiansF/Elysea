@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CollisionPlayer : MonoBehaviour
 {
+
+
     private movBateauPlayer boat; // remplace par le nom de TON script parent
     
     public PlayerHealth playerHealth;
@@ -12,6 +14,7 @@ public class CollisionPlayer : MonoBehaviour
     private int continuousDamage = 0;
 
     private float damageTimer = 0f;
+
 
     [HideInInspector]
     public GameManager gameManager;
@@ -69,6 +72,9 @@ public class CollisionPlayer : MonoBehaviour
             else
             {
                 Debug.Log("Dégâts reçus de l'ennemi : " + enemy.damageContact);
+                        
+
+
                 playerHealth.takeDamage(enemy.damageContact);
             }
             

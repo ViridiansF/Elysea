@@ -4,10 +4,13 @@ public class shootEnemy : shootBullet
 {
     [SerializeField] public float rotationSpeed = 5f;
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        fireTimer = fireRate;
+        float randomValue = Random.Range(-1.0f, 1.0f); // entre 0 et 10
+        fireTimer = fireRate+randomValue;
     }
 
     // Update is called once per frame

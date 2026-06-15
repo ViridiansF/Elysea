@@ -12,7 +12,9 @@ public class colisionEnemy : MonoBehaviour
     private float knockbackForceBullet = 5f;
     HealthBarBoss healthBarBoss;
 
-    
+    public AudioSource audioSource;
+    public AudioClip enemyDeathSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +32,9 @@ public class colisionEnemy : MonoBehaviour
         
 
         if (collision.gameObject.CompareTag("Player"))
-        {
+        {        
+
+
             if (enableContactDeath)
             {
                 death();
@@ -65,6 +69,7 @@ public class colisionEnemy : MonoBehaviour
             Debug.Log("PV ennemi : " + pv);
             if (pv <= 0)
             {
+                AudioSource.PlayClipAtPoint(enemyDeathSound, transform.position);
                 Debug.Log("Ennemi détruit");
                 death();
             }

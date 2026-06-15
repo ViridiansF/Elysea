@@ -3,6 +3,7 @@ using UnityEngine;
 public class shootPlayer : shootBullet
 {
     private Vector2 mousePos;
+    
 
 
 

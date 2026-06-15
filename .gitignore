@@ -73,6 +73,9 @@ AddressableAssetsData/*/catalog_*_bundle.dat
 *.unitypackage
 
 <<<<<<< HEAD
+Elysea/UserSettings/*
+=======
+<<<<<<< HEAD
 */default-6000.dwlt
 
 Elysea/UserSettings/EditorUserSettings.asset
@@ -82,4 +85,5 @@ default-6000.dwlt
 
 Elysea/UserSettings/Layouts/default-6000.dwlt
 Elysea/UserSettings/EditorUserSettings.asset
+>>>>>>> master
 >>>>>>> master
