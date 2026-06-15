@@ -100,7 +100,7 @@ public class movBateauPlayer : MonoBehaviour
         // Calculer le ratio d'augmentation
         float ratio = maxSpeed / oldMaxSpeed;
 
-        // Ajuster l'accélération en fonction du nouveau maxSpeed
-        thrust *= ratio;
+        // Ajuster l'accélération en fonction du nouveau maxSpeed (divisé par 2)
+        thrust *= (1 + (ratio - 1) / 2);
     }
 }

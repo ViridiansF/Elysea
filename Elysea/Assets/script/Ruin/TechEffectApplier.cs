@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 
 public class TechEffectApplier : MonoBehaviour
 {
@@ -77,9 +78,17 @@ public class TechEffectApplier : MonoBehaviour
         {
             if (playerCamera != null)
             {
-                float bonusPercentage = tech.GetVisionBonus();
-                playerCamera.orthographicSize *= bonusPercentage / 100f;
-                Debug.Log($"  → Vision +{bonusPercentage}% (Nouvelle taille caméra: {playerCamera.orthographicSize})");
+                PixelPerfectCamera pixelPerfectCamera = playerCamera.GetComponent<PixelPerfectCamera>();
+                if (pixelPerfectCamera != null)
+                {
+                    float bonusPercentage = tech.GetVisionBonus();
+                    pixelPerfectCamera.assetsPPU = (int)(pixelPerfectCamera.assetsPPU / (1 + bonusPercentage / 1000f));
+                    Debug.Log($"  → Vision +{bonusPercentage}% (Nouvelle PPU: {pixelPerfectCamera.assetsPPU})");
+                }
+                else
+                {
+                    Debug.LogWarning("Composant PixelPerfectCamera non trouvé!");
+                }
             }
             else
             {
