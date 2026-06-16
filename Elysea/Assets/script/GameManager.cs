@@ -238,22 +238,43 @@ public class GameManager : Save
 
     private void ReadDataSave()
     {
-        player.GetComponent<PlayerHealth>().SetHealth(dataSave.currentHealth);
-
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        
+        // Réinitialiser les ressources avant de réappliquer les technos
+        RessourceManager.Instance.SetPollution(0f);
+        playerHealth.maxHealth = 100f;  // Réinitialiser maxHealth
+        
+        // Réappliquer les effets de chaque technologie
         if (dataSave.technology != null)
         {
+            TechEffectApplier effectApplier = FindAnyObjectByType<TechEffectApplier>();
+            
             foreach (Tech tech in dataSave.technology)
             {
-                // Debug.Log("Tech chargée : " + tech.getName());
+                // Appliquer l'effet une seule fois
+                if (effectApplier != null)
+                {
+                    effectApplier.ApplyTechEffect(tech);
+                }
+                else
+                {
+                    levelUpScript.updateTechnology();
+                }
+            }
+            
+            // Puis ajouter les technologies au panel UI (après les effets)
+            foreach (Tech tech in dataSave.technology)
+            {
                 panel.setActualTechnology(tech);
-                levelUpScript.updateTechnology(); // Forcer la mise à jour des technologies appliquées
             }
         }
+        
+        // La santé démarre au max
+        playerHealth.SetHealth(playerHealth.GetMaxHealth());
     }
 
     private void WriteDataSave()
     {
-        dataSave.currentHealth = player.GetComponent<PlayerHealth>().GetCurrentHealth();
         dataSave.level += 1;
         dataSave.technology = panel.getCurrentTechnology();
 

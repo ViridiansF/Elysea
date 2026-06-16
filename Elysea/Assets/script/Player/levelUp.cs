@@ -53,6 +53,12 @@ public class levelUp : MonoBehaviour
             Tech newTech = latestTechs[latestTechs.Count - 1];
             Debug.Log("Nouvelle technologie acquise: " + newTech.getName());
             
+            // Lazy initialization - chercher TechEffectApplier si pas trouvé
+            if (effectApplier == null)
+            {
+                effectApplier = FindAnyObjectByType<TechEffectApplier>();
+            }
+            
             // Appliquer les effets
             if (effectApplier != null)
             {

@@ -11,16 +11,12 @@ public class Save:MonoBehaviour
     {
         public int level;
         public int endLevel;
-        public float currentHealth;
-        public float pollution;
         public List<Tech> technology;
 
-        public SaveData(int level=1, int endLevel=2, float currentHealth=100f, float pollution=0f, List<Tech> technology=null)
+        public SaveData(int level=1, int endLevel=2, List<Tech> technology=null)
         {
             this.level = level;
             this.endLevel = endLevel;
-            this.currentHealth = currentHealth;
-            this.pollution = pollution;
             this.technology = technology ?? new List<Tech>();
         }
     }
